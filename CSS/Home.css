@@ -1,0 +1,15 @@
+.image img {
+    width: 200 !important; 
+    height: 100 !important;
+}
+.footer {
+    color: white;
+}
+.footer img {
+    width: 30px;
+    height: 30px;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
