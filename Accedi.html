@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accedi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+        <!--font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <style>
+            input {
+                border: 0;
+            }
+            
+            .mancante {
+                border-color: red;
+            }
+        </style>
+    </head>
+    <body style="font-family: Poppins, sans-serif; background-color: #F4F4F4;">
+        <div class="container my-5 p-3 rounded shadow-lg" style="width: 310px;"> <!--ACCEDI-->
+            <div class="row text-center">
+                <div class="col-12 mb-2">
+                    <img src="./IMMAGINI PROGETTO/Logo.png" width="60px">
+                </div>
+                <div class="col-12 my-2">
+                    <p>Accedi alla tua Area Privata</p>
+                </div>
+            </div> <!--FINE RIGA-->
+            <div class="row text-center"> <!--FORM-->
+                <form id="accedi" name="form1" action="">
+                    <div class="form-floating mx-2 mb-2">
+                        <input type="email" class="form-control" name="femail" id="email_accesso" onclick="resetta()">
+                        <label for="email_accesso">Indirizzo Email</label>
+                    </div>
+                    <div class="form-floating mx-2 mb-2">
+                        <input type="password" class="form-control" name="fpassword" id="pw_accesso" onclick="resetta()>
+                        <label for="pw_accesso">Password</label>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p class="text-start mt-1" style="color: grey; font-size: x-small;"><a href="#">informativa per la privacy</a></p>
+                            <p class="text-end mt-1" style="color: grey; font-size: x-small;"><a href="#">Password dimenticata?</a></p>
+                        </div>
+                    </div> <!--FINE DIV-->
+                    <button type="button" class="btn" style="background-color: #EF7365; color:#F4F4F4" onclick="validazione()">ACCEDI</button>
+                </form>
+            </div>
+        </div> <!--FINE ACCEDI-->
+        <div class="container my-5 p-3 rounded shadow-lg" style="width:310px"> <!--REGISTRATI-->
+            <div class="row text-center">
+                <div class="col-12">
+                    <p>Non sei ancora registrato?</p>
+                </div>
+                <div class="col-12">
+                    <a class="btn" href="./Registrati.html" role="button" style="background-color: #EF7365; color: #F4F4F4;">Registrati ora</a>
+                </div>
+            </div> <!--FINE RIGA-->
+        </div> <!--FINE REGISTRATI-->
+        <!--JS BOOTSTRAP-->
+        <script src="./JS/bootstrap.bundle.js"></script>
+        <!--JS-->
+        <script>
+            function validazione() {
+                const mAccesso = document.getElementById("email_accesso");
+                const pAccesso = document.getElementById("pw_accesso");
+                let incompleto = false;
+                if (mAccesso.value=="") {
+                    mAccesso.classList.add("mancante");
+                    incompleto=true;
+                };
+                if (pAccesso.value=="") {
+                    pAccesso.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (incompleto==true) {
+                    alert("Campo obbligatorio mancante!")
+                }
+            };
+            function resetta() {
+                const mancanti = document.getElementsByClassName("mancante");
+                for (const dato of mancanti) {
+                    dato.classList.remove("mancante");
+                }
+            }
+        </script>
+    </body>
+</html>
