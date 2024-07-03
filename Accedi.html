@@ -15,7 +15,16 @@
             }
             
             .mancante {
+                border-style: solid;
+                border-width: 2px;
                 border-color: red;
+            }
+
+            .invio:hover {
+                border-style: solid;
+                border-width: 2px;
+                border-color: #FBD26C;
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -23,7 +32,7 @@
         <div class="container my-5 p-3 rounded shadow-lg" style="width: 310px;"> <!--ACCEDI-->
             <div class="row text-center">
                 <div class="col-12 mb-2">
-                    <img src="./IMMAGINI PROGETTO/Logo.png" width="60px">
+                    <img src="./IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png" width="60px">
                 </div>
                 <div class="col-12 my-2">
                     <p>Accedi alla tua Area Privata</p>
@@ -32,11 +41,11 @@
             <div class="row text-center"> <!--FORM-->
                 <form id="accedi" name="form1" action="">
                     <div class="form-floating mx-2 mb-2">
-                        <input type="email" class="form-control" name="femail" id="email_accesso" onclick="resetta()">
-                        <label for="email_accesso">Indirizzo Email</label>
+                        <input type="email" class="form-control" name="email" id="email_utente" onclick="resetta()" placeholder="email@example.com">
+                        <label for="email_utente">Indirizzo Email</label>
                     </div>
                     <div class="form-floating mx-2 mb-2">
-                        <input type="password" class="form-control" name="fpassword" id="pw_accesso" onclick="resetta()>
+                        <input type="password" class="form-control" name="password" id="pw_accesso" onclick="resetta()" placeholder="password">
                         <label for="pw_accesso">Password</label>
                         <div style="display: flex; justify-content: space-between;">
                             <p class="text-start mt-1" style="color: grey; font-size: x-small;"><a href="#">informativa per la privacy</a></p>
@@ -62,7 +71,7 @@
         <!--JS-->
         <script>
             function validazione() {
-                const mAccesso = document.getElementById("email_accesso");
+                const mAccesso = document.getElementById("email_utente");
                 const pAccesso = document.getElementById("pw_accesso");
                 let incompleto = false;
                 if (mAccesso.value=="") {

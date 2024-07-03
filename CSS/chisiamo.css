@@ -1,0 +1,32 @@
+.image img {
+    width: 200 !important; 
+    height: 100 !important;
+}
+.footer {
+    color: white;
+    margin-top: 80px;
+}
+.footer img {
+    width: 30px;
+    height: 30px;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#chiSiamoContent {
+    padding-top: 6%;
+    text-align: center;
+    text-justify:auto ;
+    
+    
+}
+
+#chiSiamoContent h2 {
+    color: #2596be;
+}
+
+.chiSiamoContent ul {
+    text-decoration: none;
+}
