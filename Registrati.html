@@ -408,8 +408,10 @@
                 }
             };
             function resetta() {
+                console.log("sono qui");
                 const mancanti = document.getElementsByClassName("mancante");
                 for (let dato of mancanti) {
+                    console.log(dato);
                     dato.classList.remove("mancante");
                 }
             }

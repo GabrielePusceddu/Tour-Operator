@@ -1,0 +1,51 @@
+ h2 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    color: #2596be;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    color: #2596be;
+}
+
+h5 {
+    text-align: center;
+}
+
+#fil1 {
+    margin-top: 2%;
+}
+
+#fil {
+    margin-top: 1%;
+}
+
+.filtri {
+    display:inline-block;
+    border: solid #386c84;
+    border-radius: 20px;
+    padding: 0;
+    margin-left: 31%;
+    margin-right: 31%;
+}
+
+.card {
+    margin-bottom: 10%;
+}
+
+.card-title {
+    color: white;
+    
+}
+
+.card-text {
+    color: white;
+}
+
+.card-body {
+    background-color: #386c84;
+}

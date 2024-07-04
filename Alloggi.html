@@ -1,8 +1,14 @@
-<html>
+<!--
+Mettere un'immagine sotto il titolo
+Aggiustare la grafica della pagina
+Far diventare carosello le varie cards
+Aggiungere altri alloggi
+-->
 
+<html>
 <head>
     <title>
-        Chi Siamo
+        Alloggi
     </title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="CSS/Home.css">
-    <link rel="stylesheet" href="CSS/chisiamo.css">
-
+    <link rel="stylesheet" href="CSS/Alloggi.css">
 </head>
 
 <body style="font-family: Poppins, sans-serif;">
@@ -105,83 +110,207 @@
             </div>
         </div>
     </nav>
-    <!-- Contenuto del chi siamo -->
-    <div class="container text-center">
-        <div class="row">
-          <div class="col-12">
-            <div class="titolo">
-                <h1>La nostra Azienda</h1>
-                <img src="https://placehold.co/1256x265/grey/black" alt="logo" width="1256" height="265">
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    
-    
-    <div class="container text-center">
-        <div class="row" id="riga1">
-            <div class="col col-sm-12-xl-6">
-                <div class="card">
-                    <img src="https://placehold.co/600x400/orange/black" class="d-block w-100" alt="...">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Chi Siamo</h5>
-                        <p class="card-text">Tours Calypso, fondata nel 2005, offre esperienze di viaggio uniche e
-                            indimenticabili con i migliori pacchetti.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-sm-12-xl-6">
-                <div class="card">
-                    <img src="https://placehold.co/600x400/orange/black" class="d-block w-100" alt="...">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">La nostra missione</h5>
-                        <p class="card-text">La nostra missione è rendere ogni viaggio indimenticabile con itinerari
-                            personalizzati che soddisfano i desideri dei clienti.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!--Contenuto-->
 
-        <div class="row" id="riga2">
-            <div class="col col-sm-12-xl-6">
-                <div class="card">
-                    <img src="https://placehold.co/600x400/orange/black" class="d-block w-100" alt="...">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">I Nostri valori</h5>
-                        <p class="card-text">Operiamo con integrità, trasmettiamo la nostra passione per i viaggi,
-                            cerchiamo nuove destinazioni e offriamo la massima qualità nei servizi.
-                        </p>
+    <h1>Alloggi </h1>
+
+    <!--Inizio Filtri-->
+
+    <div class="filtri">
+
+        <h5>Filtri</h5>
+        
+        <div class="container text-center">
+            <div class="row" id="fil">
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">1 Stella</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">2 Stelle</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">3 Stelle </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                        <label class="form-check-label" for="inlineCheckbox3">4 Stelle </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                        <label class="form-check-label" for="inlineCheckbox3">5 Stelle </label>
+                    </div>
+
                 </div>
             </div>
-            <div class="col col-sm-12-xl-6">
-                <div class="card">
-                    <img src="https://placehold.co/600x400/orange/black" class="d-block w-100" alt="...">
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">La nostra visione</h5>
-                        <p class="card-text">Vogliamo essere l'agenzia di riferimento per esperienze di viaggio
-                            autentiche, espandendoci globalmente con attenzione alla qualità e alla soddisfazione del
-                            cliente.
-                        </p>
+
+        </div>
+        <div class="container text-center">
+            <div class="row" id="fil1">
+                <div class="col">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                            <label class="form-check-label" for="inlineCheckbox3">Solo Pernottamento</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                            <label class="form-check-label" for="inlineCheckbox3">Pernottamento e Prima Colazione
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                            <label class="form-check-label" for="inlineCheckbox3">Mezza Pensione </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--Inizio codice per ogni card-->
+
+    <h2>Hotel a Roma </h2>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Hassler Roma</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Piazza Trinità dei Monti, 6<br>
+                            <strong>Posizione:</strong> Roma, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Rome Cavalieri</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 5 stelle <br>
+                            <strong>Indirizzo</strong> Via Alberto Cadlolo ,101<br>
+                            <strong>Posizione:</strong> Roma, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Artemide</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Via Nazionale, 22<br>
+                            <strong>Posizione:</strong> Roma, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Augustus</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Via Veneto, 45<br>
+                            <strong>Posizione:</strong> Roma, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, spa, palestra
+                            <br>
+                            <strong>Prezzo:</strong> €140 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Hotel A Palermo</h2>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Serenissima</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Via Roma, 100<br>
+                            <strong>Posizione:</strong> Palermo, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Palatium</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 5 stelle <br>
+                            <strong>Indirizzo</strong>Via Maqueda, 50<br>
+                            <strong>Posizione:</strong> Palermo, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Centrale</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Via Libertà, 150<br>
+                            <strong>Posizione:</strong> Palermo, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, palestra <br>
+                            <strong>Prezzo:</strong> €120 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12-xl-3">
+                <div class="card">
+                    <img src="https://placehold.co/300x300" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Bellavista</h5>
+                        <p class="card-text"><strong>Tipo:</strong> Hotel 4 stelle <br>
+                            <strong>Indirizzo</strong> Via Vittorio Emanuele, 80<br>
+                            <strong>Posizione:</strong> Palermo, Italia <br>
+                            <strong>Caratteristiche:</strong> Wi-Fi gratuito, colazione inclusa, piscina, spa, palestra
+                            <br>
+                            <strong>Prezzo:</strong> €140 a notte
+                        </p>
+                        <a href="#" class="btn btn-light">Prenota</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 
