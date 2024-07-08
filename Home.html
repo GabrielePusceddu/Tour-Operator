@@ -97,13 +97,14 @@
                 <br>
                 <form class="d-flex" role="search" style="margin-top: 12px;">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit"
+                        style="color: #2e92a9; border-color: #2e92a9;">Search</button>
                 </form>
 
             </div>
         </div>
     </nav>
-    
+
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -114,26 +115,31 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000">
-                <img src="IMMAGINI PROGETTO/00-Parigi.jpg" class="d-block w-100" alt="Parigi">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="IMMAGINI PROGETTO/99.jpg" class="d-block w-100" alt="Nilo">
+                <div class="carousel-caption d-md-block">
+                    <h5>La tua crociera sul Nilo</h5>
+                    <p>Alla scoperta dell'antico Egitto.</p>
+                    <a class="btn btn-primary" href="#" role="button"
+                        style="background-color: white; color: #2e92a9;">Prenota qui</a>
                 </div>
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="IMMAGINI PROGETTO/cose-da-vedere-a-londra-in-2-giorni-1-1522360321.jpg" class="d-block w-100"
-                    alt="Londra">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="IMMAGINI PROGETTO/Summer-Vacation.jpg" class="d-block w-100" alt="Vacanze">
+                <div class="carousel-caption d-md-block">
+                    <h5>Estate e Mare</h5>
+                    <p>Le mete migliori per la tua Estate</p>
+                    <a class="btn btn-primary" href="#" role="button"
+                        style="background-color: white; color: #2e92a9;">Inizia qui</a>
                 </div>
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="IMMAGINI PROGETTO/barcellona.jpg" class="d-block w-100" alt="Barcellona">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="IMMAGINI PROGETTO/cosa-vedere-dubai-1.jpeg" class="d-block w-100" alt="Barcellona">
+                <div class="carousel-caption d-md-block">
+                    <h5>Un sogno a Dubai</h5>
+                    <p>Goditi la città delle meraviglie.</p>
+                    <a class="btn btn-primary" href="#" role="button"
+                        style="background-color: white; color: #2e92a9;">Parti subito</a>
                 </div>
             </div>
         </div>
@@ -148,8 +154,47 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <br>
+    <div class="container mt-5">
+        <div class="row row-cols-lgl-auto">
+            <div class="col">
+
+
+                <div class="form-floating" style="margin-top: 15px;">
+                    <input type="search" class="form-control" id="floatingInputGrid" value placeholder="Destinazione">
+                    <label for="floatingInputGrid">Destinazione</label>
+                </div>
+
+
+            </div>
+            <div class="col">
+                <!-- Dropdown -->
+                <div class="dropdown dropdown-padding-x: 120px mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="height: 57px; ; background-color: white; color: #2e92a9; border-color: #2e92a9;">
+                        Tipologia
+                    </button>
+                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <div class="d-flex flex-row p-2 form-flex w-100">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio1" value="option1">
+                                    <label class="form-check-label" for="radio1">Bergamo (BGY)</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio2" value="option2">
+                                    <label class="form-check-label" for="radio2">Milano Malpensa (MXP)</label>
+                                  </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/Home.js"></script>
 </body>
 <br>
 <footer class="footer" style="font-family: Poppins, sans-serif; background-color: #366880;">
@@ -157,9 +202,9 @@
     <div class="container-fluid" style=" background-color: #a3ddf8; background-size: 2000px; ">
         <div class="row">
             <div class="col align-self-center" id="image" style="display: flex; justify-content: center;">
-                <div class="image" >
+                <div class="image">
                     <img src="IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png"
-                        alt="" width="200 !important"  height="100 !important">
+                        alt="" width="200 !important" height="100 !important">
                 </div>
             </div>
             <br>
@@ -245,8 +290,8 @@
                 <br>
                 <a href="#">Guida per i Gestori</a>
             </div>
-            
-            
+
+
         </div>
     </div>
 </footer>
