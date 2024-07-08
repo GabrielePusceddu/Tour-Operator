@@ -1,0 +1,19 @@
+
+.content h1 {
+    color: #2596be;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.card {
+    margin-left: 2%;
+    margin-right: 2%;
+}
