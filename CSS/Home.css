@@ -19,11 +19,12 @@
 
 .carousel-inner h5 {
     font-size: 80px;
-    color: white;
+    color: black;
 }
 
 .carousel-inner p {
     font-size: 40px;
+    color: black;
 }
 
 .formcar {
