@@ -13,6 +13,14 @@
             input {
                 border: 0;
             }
+
+            .hidden {
+                display: none;
+            }
+
+            #errore, #errore_pw {
+                color: red;
+            }
             
             .mancante {
                 border-style: solid;
@@ -64,7 +72,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="./destinazioni.html" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Destinazioni
                             </a>
@@ -75,7 +83,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="./Alloggi.html" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Alloggi
                             </a>
@@ -97,7 +105,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="./LastMinute.html" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Last Minute
                             </a>
@@ -108,7 +116,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="./ChiSiamo.html" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Chi Siamo
                             </a>
@@ -125,8 +133,8 @@
                                 height="50">
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Accedi</a></li>
+                            <li><a class="dropdown-item" href="./Registrati.html">Registrati</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
@@ -159,6 +167,7 @@
                 </div>
             </div> <!--FINE RIGA-->
             <div class="row text-center"> <!--FORM-->
+                <label class="hidden pb-1" id="errore"><ins>CAMPO MANCANTE!</ins></label>
                 <form id="accedi" name="form1" action="">
                     <div class="form-floating mx-2 mb-2">
                         <input type="email" class="form-control" name="email" id="email_utente" onclick="resetta()" placeholder="email@example.com">
@@ -190,6 +199,7 @@
         <script src="./JS/bootstrap.bundle.min.js"></script>
         <!--JS-->
         <script>
+            const errore = document.getElementById('errore');
             function validazione() {
                 const mAccesso = document.getElementById("email_utente");
                 const pAccesso = document.getElementById("pw_accesso");
@@ -203,7 +213,9 @@
                     incompleto=true;
                 }
                 if (incompleto==true) {
-                    alert("Campo obbligatorio mancante!")
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
                 }
             };
             function resetta() {
@@ -211,25 +223,17 @@
                 for (let dato of mancanti) {
                     dato.classList.remove("mancante");
                 }
+                //nascondo nuovamente il messaggio di errore campo mancante
+                if(!errore.classList.contains('hidden')) {
+                    errore.classList.add('hidden');
+                }
             }
         </script>
     </body>
     <br>
-    <footer class="footer" style="font-family: Poppins, sans-serif; background-color: #366880;">
+    <footer class="footer pt-2" style="font-family: Poppins, sans-serif; background-color: #366880;">
 
-        <div class="container-fluid" style=" background-color: #a3ddf8; background-size: 2000px; ">
-            <div class="row">
-                <div class="col align-self-center" id="image" style="display: flex; justify-content: center;">
-                    <div class="image" >
-                        <img src="IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png"
-                            alt="">
-                    </div>
-                </div>
-                <br>
-            </div>
-
-        </div>
-        <br>
+        
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
@@ -275,9 +279,9 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                     <h3>Link Utili</h3>
                     <br>
-                    <a href="#">Home</a>
+                    <a href="./Home.html">Home</a>
                     <br>
-                    <a href="#">Chi siamo</a>
+                    <a href="./ChiSiamo.html">Chi siamo</a>
                     <br>
                     <a href="#">Servizi</a>
                     <br>
@@ -296,7 +300,7 @@
                     <br>
                     <a href="#">Il Gruppo</a>
                     <br>
-                    <a href="#">Area Riservata</a>
+                    <a href="./Accedi.html">Area Riservata</a>
                     <br>
                     <a href="#">Convenzioni</a>
                     <br>
