@@ -18,6 +18,13 @@
                 display: none;
             }
 
+            .info:hover {
+                border-style: solid;
+                border-width: 2px;
+                border-color: #FBD26C;
+                text-decoration: underline;
+            }
+
             .footer {
                 color: white;
                 margin-top: 80px;
@@ -145,8 +152,8 @@
             <h1 class="position-absolute top-50 start-50 translate-middle">Le nostre offerte Last Minute!</h1>
         </div>
         <!--TESTO-->
-        <div class="container-fluid text-center last-minute-text pt-2">
-            <div class="row px-5">
+        <div class="container-fluid text-center last-minute-text py-3">
+            <div class="row px-5 py-2">
                 <div class="col-12 px-5">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero justo, pharetra tincidunt viverra ac, euismod ac risus. Nunc eu dignissim turpis, ut fermentum nisl. Morbi nec lorem diam. Vestibulum semper aliquam magna ac facilisis. Proin dapibus metus ante, id feugiat turpis posuere ac. Vestibulum iaculis ullamcorper eros sit amet pellentesque.</p>
                 </div>
@@ -155,22 +162,87 @@
         <!--OFFERTE-->
         <ul class="nav nav-tabs mt-3">
             <li class="nav-item">
-                <a class="nav-link active pag offerte_Ita" aria-current="page" href="#" onclick="cambiaPagina('offerte_Ita')">Italia</a>
+                <a class="nav-link active pag offerte_Ita position-relative" aria-current="page" onclick="cambiaPagina('offerte_Ita')">Italia<span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle rounded">New</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pag offerte_Eu" href="#" onclick="cambiaPagina('offerte_Eu')">Europa</a>
+                <a class="nav-link pag offerte_Eu position-relative" onclick="cambiaPagina('offerte_Eu')">Europa<span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle rounded">New</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pag offerte_Ame" href="#" onclick="cambiaPagina('offerte_Ame')">America</a>
+                <a class="nav-link pag offerte_Ame position-relative" onclick="cambiaPagina('offerte_Ame')">America<span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle rounded">New</span></a>
             </li>
         </ul>
         <div class="container offerte" id="offerte_Ita">
             <div class="row px-5">
-                <div class="col-12 text-center"> <!--TITOLO-->
+                <div class="col-12 text-center py-2"> <!--TITOLO-->
                     <h2>Offerte Last Minute in Italia!</h2>
                 </div>
-                <div class="col-12"> <!--BODY-->
-                    Offerte in ITALIA!
+                <div class="col-12"> <!--BODY OFFERTE-->
+                    <!--SARDEGNA, SICILIA E VENEZIA-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Sardegna
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row text-center">
+                                        <div class="col-12 col-md-6">
+                                            <img src="./IMMAGINI PROGETTO/Sardega_last-minute.jpg" class="w-75">
+                                        </div>
+                                        <div class="col-12 col-md-6 ps-0 pe-5 pt-4">
+                                            <p>Prenota ora e parti entro 30 giorni per un fantastico viaggio in <strong>Sardegna</strong>. Scopri questa terra magnifica insieme a noi!</p>
+                                            <h6 class="mt-4">PRENOTA ORA!</h6>
+                                            <button type="button" class="btn info text-uppercase mt-2" style="background-color: #EF7365; color:#F4F4F4">scopri di più</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Sicilia
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row text-center">
+                                        <div class="col-12 col-md-6">
+                                            <img src="./IMMAGINI PROGETTO/Sicilia_last-minute.jpg" class="w-75">
+                                        </div>
+                                        <div class="col-12 col-md-6 ps-0 pe-5 pt-4">
+                                            <p>Prenota ora e parti entro 30 giorni per un fantastico viaggio in <strong>Sicilia</strong>. Scopri questa terra magnifica insieme a noi!</p>
+                                            <h6 class="mt-4">PRENOTA ORA!</h6>
+                                            <button type="button" class="btn info text-uppercase mt-2" style="background-color: #EF7365; color:#F4F4F4">scopri di più</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Venezia
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row text-center">
+                                        <div class="col-12 col-md-6">
+                                            <img src="./IMMAGINI PROGETTO/Venezia_last-minute.jpg" class="w-75">
+                                        </div>
+                                        <div class="col-12 col-md-6 ps-0 pe-5 pt-4">
+                                            <p>Prenota ora e parti entro 30 giorni per un fantastico viaggio in <strong>Venezia</strong>. Scopri questa terra magnifica insieme a noi!</p>
+                                            <h6 class="mt-4">PRENOTA ORA!</h6>
+                                            <button type="button" class="btn info text-uppercase mt-2" style="background-color: #EF7365; color:#F4F4F4">scopri di più</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,8 +251,46 @@
                 <div class="col-12 text-center"> <!--TITOLO-->
                     <h2>Offerte Last Minute in Europa!</h2>
                 </div>
-                <div class="col-12"> <!--BODY-->
-                    Offerte in EUROPA
+                <div class="col-12"> <!--BODY OFFERTE-->
+                    <!--PARIGI, LONDRA E BARCELLONA-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Parigi
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Londra
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Barcellona
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,8 +299,46 @@
                 <div class="col-12 text-center"> <!--TITOLO-->
                     <h2>Offerte Last Minute in America!</h2>
                 </div>
-                <div class="col-12"> <!--BODY-->
-                    Offerte in AMERICA!
+                <div class="col-12"> <!--BODY OFFERTE-->
+                    <!--NEW YORK, LOS ANGELES E BUENOS AIRES-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    New York
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Los Angeles
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Buenos Aires
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,21 +389,8 @@
         </script>
     </body>
     <br>
-    <footer class="footer" style="font-family: Poppins, sans-serif; background-color: #366880;">
+    <footer class="footer pt-2" style="font-family: Poppins, sans-serif; background-color: #366880;">
 
-        <div class="container-fluid" style=" background-color: #a3ddf8; background-size: 2000px; ">
-            <div class="row">
-                <div class="col align-self-center" id="image" style="display: flex; justify-content: center;">
-                    <div class="image" >
-                        <img src="IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png"
-                            alt="">
-                    </div>
-                </div>
-                <br>
-            </div>
-
-        </div>
-        <br>
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
