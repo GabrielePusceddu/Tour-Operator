@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="CSS/Home.css">
 </head>
 
-<body style="font-family: Poppins, sans-serif;">
+<body class="body" style="font-family: Poppins, sans-serif;">
     <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: #f4f4f4;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -27,6 +27,17 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Chi Siamo
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -63,7 +74,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Last Minute
+                            Preventivo
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -71,17 +82,7 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Chi Siamo
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
                 <div class="dropdown" style="margin-right: 10px;">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,7 +99,7 @@
                 <form class="d-flex" role="search" style="margin-top: 12px;">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"
-                        style="color: #2e92a9; border-color: #2e92a9;">Search</button>
+                        style="color: #2e92a9; border-color: #2e92a9; ">Search</button>
                 </form>
 
             </div>
@@ -116,7 +117,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="3000">
-                <img src="IMMAGINI PROGETTO/99.jpg" class="d-block w-100" alt="Nilo">
+                <img src="IMMAGINI PROGETTO/99.jpg" class="d-block w-100" alt="Nilo" style="opacity: 0.8;">
                 <div class="carousel-caption d-md-block">
                     <h5>La tua crociera sul Nilo</h5>
                     <p>Alla scoperta dell'antico Egitto.</p>
@@ -125,7 +126,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
-                <img src="IMMAGINI PROGETTO/Summer-Vacation.jpg" class="d-block w-100" alt="Vacanze">
+                <img src="IMMAGINI PROGETTO/Summer-Vacation.jpg" class="d-block w-100" alt="Vacanze" style="opacity: 0.8;">
                 <div class="carousel-caption d-md-block">
                     <h5>Estate e Mare</h5>
                     <p>Le mete migliori per la tua Estate</p>
@@ -134,7 +135,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
-                <img src="IMMAGINI PROGETTO/cosa-vedere-dubai-1.jpeg" class="d-block w-100" alt="Barcellona">
+                <img src="IMMAGINI PROGETTO/cosa-vedere-dubai-1.jpeg" class="d-block w-100" alt="Barcellona" style="opacity: 0.7;">
                 <div class="carousel-caption d-md-block">
                     <h5>Un sogno a Dubai</h5>
                     <p>Goditi la città delle meraviglie.</p>
@@ -154,63 +155,431 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <br>
+
     <div class="container mt-5">
-        <div class="row row-cols-lgl-auto">
+        <div class="row row-cols-lg-4 row-cols-md-1 row-cols-sm-1">
             <div class="col">
-
-
-                <div class="form-floating" style="margin-top: 15px;">
-                    <input type="search" class="form-control" id="floatingInputGrid" value placeholder="Destinazione">
-                    <label for="floatingInputGrid">Destinazione</label>
+                <div class="form-floating mb-3"
+                    style="color: #2e92a9; position: relative; left: 235px; padding-right: 50px;">
+                    <input type="search" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        style=" border-color: #2e92a9;">
+                    <label for="floatingInput">Destinazione</label>
                 </div>
-
-
             </div>
             <div class="col">
-                <!-- Dropdown -->
-                <div class="dropdown dropdown-padding-x: 120px mt-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-bs-toggle="dropdown" aria-expanded="false" style="height: 57px; ; background-color: white; color: #2e92a9; border-color: #2e92a9;">
-                        Tipologia
-                    </button>
-                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                        <li>
-                            <div class="d-flex flex-row p-2 form-flex w-100">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio1" value="option1">
-                                    <label class="form-check-label" for="radio1">Bergamo (BGY)</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio2" value="option2">
-                                    <label class="form-check-label" for="radio2">Milano Malpensa (MXP)</label>
-                                  </div>
+                <div class="modbutton">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Tipologia</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Partenze</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="modal-body">
+                                <div class="modalform">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">BERGAMO (BGY)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">CATANIA (CTA)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">ROMA FIUMICINO (FCO)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio4">MILANO MALPENSA (MXP)
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio5">NAPOLI (NAP)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio6" value="option6">
+                                        <label class="form-check-label" for="inlineRadio6">VERONA (VRN)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio7" value="option7">
+                                        <label class="form-check-label" for="inlineRadio7">CAGLIARI (CA)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio8" value="option8">
+                                        <label class="form-check-label" for="inlineRadio8">PISA (PSA)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio9" value="option9">
+                                        <label class="form-check-label" for="inlineRadio9">PALERMO (PMO)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Continua</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modbutton2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">
+                        Ospiti
+                    </button>
+                </div>
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Quanti siete?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Adulti:</label>
+                                        <input type="number" class="form-control" id="recipient-number">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Bambini:</label>
+                                        <input type="number" class="form-control" id="recipient-number">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Camere:</label>
+                                        <input type="number" class="form-control" id="recipient-number">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Continua</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modbutton3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal3">
+                        Periodo
+                    </button>
+                </div>
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Qando Parti?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Partenza:</label>
+                                        <input type="date" class="form-control" id="recipient-date">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Arrivo:</label>
+                                        <input type="date" class="form-control" id="recipient-date">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Continua</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Scopri le Nostre Migliori Offerte</h1>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/egypt.jpg" class="card-img" alt="..." height="400px" style="opacity: 0.8;">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title" style="color: black;">Egitto</h1>
+                        <a href="#"
+                            style="display: flex; justify-content: flex-end; align-content: flex-end; color: black; text-decoration: none;">Scopri
+                            le Nostre offerte</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/woman-traveler-explores-ruins-ancient-260nw-2141122581.jpeg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">I Tesori del Nilo</h5>
+                        <p>EGITTO - CROCIERE SUL NILO</p>
+                        <p>02 Set 24 » 09 Set 24 (7 Notti)</p>
+                        <p>Voli Da Milano Malpensa (Mxp)</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€1.524/ persona</h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/tour egypt.png" class="card-img-top" alt="..." height="170px">
+                    <div class="card-body">
+                        <h5 class="card-title">Voyager Amon</h5>
+                        <p>EGITTO - CROCIERE SUL NILO</p>
+                        <p>26 Ago 24 » 02 Set 24 (7 Notti)</p>
+                        <p>Voli Da Milano Malpensa (Mxp)</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€2.113/ persona</h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/river-nile-egypt-scaled.jpeg" class="card-img-top" alt="..."
+                        height="170px">
+                    <div class="card-body">
+                        <h5 class="card-title">Voyager Sobek</h5>
+                        <p>EGITTO - CROCIERE SUL NILO</p>
+                        <p>29 Lug 24 » 05 Ago 24 (7 Notti)</p>
+                        <p>Voli Da Roma Fiumicino (Fco)</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€1.709/persona</h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/cuba.jpg" class="card-img" alt="..." height="400px" style="opacity: 0.8;">
+                    <div class="card-img-overlay">
+                        <h2 class="card-title" style="color: black;">Cuba</h2>
+                        <a href="#"
+                            style="display: flex; justify-content: flex-end; align-content: flex-end; color: black; text-decoration: none;">Scopri
+                            le Nostre offerte</a>
 
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/cuba2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Magic Isla Grande</h5>
+                        <p>CUBA - TOUR CUBA</p>
+                        <p>29 Lug 24 » 05 Ago 24 (7 Notti)</p>
+                        <p>Voli Da Milano Malpensa (Mxp)</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€1.604/ persona</h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/cuba3" class="card-img-top" alt="..." height="170px">
+                    <div class="card-body">
+                        <h5 class="card-title">Tour Chiave Del Golfo</h5>
+
+                        <p>CUBA - TOUR CUBA</p>
+                        <p>29 Lug 24 » 05 Ago 24 (7 Notti)</p>
+                        <p>Voli Da Milano Malpensa (Mxp)</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€1.833/ persona
+                                    </h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img src="IMMAGINI PROGETTO/cuba4.jpg" class="card-img-top" alt="..." height="170px" >
+                    <div class="card-body">
+                        <h5 class="card-title">Old Havana</h5>
+                        <p>CUBA - TOUR CUBA</p>
+                        <p>24 Lug 24 » 08 Ago 24 (14 notti)</p>
+                        <p>Voli Da Roma Fiumicino (Fco)</p>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="row row-cols-lg-2">
+                                <div class="col">
+                                    <h5>€3.835/persona</h5>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" href="#" role="button">Scopri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Perché scegliere Calypso Tour</h1>
+    <br>
+    <br>
+    <div class="row row-cols-1 row-cols-md-2 g-4" style="display: flex; justify-content: center; margin-left: 10px;">
+        <div class="col">
+            <div class="card mb-3" style="max-width: 1000px; ">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="IMMAGINI PROGETTO/pexels-te-lensfix-380994-1371360.jpg" class="img-fluid rounded-start" alt="..." style="height: 325px; width: 600px;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 700px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="C:\Users\gabry\Desktop\Tour Operator\IMMAGINI PROGETTO\vacation.jpeg" class="img-fluid rounded-start" alt="..."  style="height: 325px;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 700px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="IMMAGINI PROGETTO/vacation2.jpg" class="img-fluid rounded-start" alt="..." style="height: 325px;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 700px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="IMMAGINI PROGETTO/vacation4.jpg" class="img-fluid rounded-start" alt="..." style="height: 325px;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
     <script src="JS/bootstrap.bundle.min.js"></script>
     <script src="JS/Home.js"></script>
 </body>
 <br>
-<footer class="footer" style="font-family: Poppins, sans-serif; background-color: #366880;">
 
-    <div class="container-fluid" style=" background-color: #a3ddf8; background-size: 2000px; ">
-        <div class="row">
-            <div class="col align-self-center" id="image" style="display: flex; justify-content: center;">
-                <div class="image">
-                    <img src="IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png"
-                        alt="" width="200 !important" height="100 !important">
-                </div>
-            </div>
-            <br>
-        </div>
-
-    </div>
+<footer class="footer w-100" style="font-family: Poppins, sans-serif;  ">
+    <br>
     <br>
     <div class="container text-center">
         <div class="row">
@@ -228,24 +597,25 @@
                 <a href="#">
                     <img src="IMMAGINI PROGETTO/icons8-facebook-500.png" alt="Facebook">
                 </a>
-                <br>
+
                 <a href="#">
                     <img src="IMMAGINI PROGETTO/icons8-instagram-500.png" alt="Instagram">
                 </a>
-                <br>
+
                 <a href="#">
                     <img src="IMMAGINI PROGETTO/icons8-twitterx-500.png" alt="Twitter">
                 </a>
-                <br>
+
                 <a href="#">
                     <img src="IMMAGINI PROGETTO/icons8-youtube-logo-500.png" alt="Youtube">
                 </a>
+                <br>
                 <br>
                 <a class="telefono" href="#">
                     <img src="IMMAGINI PROGETTO/telefono.png" alt="telefono">
                     <span> +39 586 718 8296</span>
                 </a>
-
+                <br>
                 <br>
                 <a class="email" href="#">
                     <img src="IMMAGINI PROGETTO/email.png" alt="email">
@@ -255,40 +625,61 @@
 
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                <h3>Link Utili</h3>
-                <br>
-                <a href="#">Home</a>
-                <br>
-                <a href="#">Chi siamo</a>
-                <br>
-                <a href="#">Servizi</a>
-                <br>
-                <a href="#">Contatti</a>
-                <br>
-                <a href="#">Metodi di Pagamento</a>
-                <br>
-                <a href="#">Bagaglio</a>
-                <br>
-                <a href="#">Assicurazioni</a>
+                <div class="linkbut">
+                    <h3>Link Utili</h3>
+                    <br>
+                    <a href="#">Home</a>
+                    <br>
+                    <br>
+                    <a href="#">Chi siamo</a>
+                    <br>
+                    <br>
+                    <a href="#">Servizi</a>
+                    <br>
+                    <br>
+                    <a href="#">Contatti</a>
+                    <br>
+                    <br>
+                    <a href="#">Metodi di Pagamento</a>
+                    <br>
+                    <br>
+                    <a href="#">Bagaglio</a>
+                    <br>
+                    <br>
+                    <a href="#">Assicurazioni</a>
+                    <br>
+                    <br>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                <h3>Calypso World</h3>
-                <br>
-                <a href="#">Lavora con Noi</a>
-                <br>
-                <a href="#">Il Gruppo</a>
-                <br>
-                <a href="#">Area Riservata</a>
-                <br>
-                <a href="#">Convenzioni</a>
-                <br>
-                <a href="#">Escursioni</a>
-                <br>
-                <a href="#">FAQ</a>
-                <br>
-                <a href="#">Guida per gli Utenti</a>
-                <br>
-                <a href="#">Guida per i Gestori</a>
+                <div class="linkbut">
+                    <h3>Calypso World</h3>
+                    <br>
+                    <a href="#">Lavora con Noi</a>
+                    <br>
+                    <br>
+                    <a href="#">Il Gruppo</a>
+                    <br>
+                    <br>
+                    <a href="#">Area Riservata</a>
+                    <br>
+                    <br>
+                    <a href="#">Convenzioni</a>
+                    <br>
+                    <br>
+                    <a href="#">Escursioni</a>
+                    <br>
+                    <br>
+                    <a href="#">FAQ</a>
+                    <br>
+                    <br>
+                    <a href="#">Guida per gli Utenti</a>
+                    <br>
+                    <br>
+                    <a href="#">Guida per i Gestori</a>
+                    <br>
+                    <br>
+                </div>
             </div>
 
 
