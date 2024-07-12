@@ -172,16 +172,16 @@
         </nav>
         <!--FINE HEADER-->
         <!--TITOLO + TESTO-->
-        <div class="container-fluid text-center mt-0 mb-2 shadow" id="descizione_prev">
+        <div class="container-fluid text-center mt-0 mb-3 shadow" id="descizione_prev">
             <h1 class="mb-2">PREVENTIVO</h1>
             <p class="my-1">Inserisci qui i tuoi dati e ottieni il preventivo di quanto dovresti spendere con noi!</p>
             <br>
             <p class="my-1" style="font-size: x-small;">I costi effettivi potrebbero subire variazioni</p>
         </div>
         <!--PREVENTVO-->
-        <div class="container text-center text-light w-50 shadow-lg rounded mt-3" id="wizard">
+        <div class="container text-light w-50 shadow-lg rounded mt-5" id="wizard">
             <!--PULSANTI-->
-            <div class="row py-1" id="buttons-row">
+            <div class="row py-1 text-center" id="buttons-row">
                 <div class="col-6">
                     <button type="button" class="btn passaggio" id="precedente" onclick="cambio('indietro')">INDIETRO</button>
                 </div>
@@ -193,9 +193,9 @@
                 </div>
             </div>
             <!--FORM-->
-            <div class="row py-1" id="form-row">
+            <div class="row py-1" id="form-row" style="height: 275px">
                 <form id="preventivo" name="preventivatore" action="">
-                    <div class="container text-dark" id="uno"> <!--  CONTAINER UNO  -->
+                    <div class="container text-center text-dark" id="uno"> <!--  CONTAINER UNO  -->
                         <div class="row">
                             <div class="form-floating mb-3 col-12 col-md-6"> <!--NOME-->
                                 <input type="text" class="form-control" id="floatingInputNome" placeholder="Nome">
@@ -350,51 +350,126 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container hidden" id="due"> <!--  CONTAINER DUE  -->
-                        <div class="row"> <!--PARTENZA-->
-                            <select class="form-select" aria-label="Default select example">
+                    <div class="container text-center hidden" id="due"> <!--  CONTAINER DUE  -->
+                        <div class="row p-1 me-1"> <!--PARTENZA-->
+                            <select class="form-select p-1 m-1" aria-label="Default select example" id="partenze">
                                 <option selected>Partenza</option>
                                 <option value="60">Milano</option>
                                 <option value="80">Roma</option>
                                 <option value="100">Napoli</option>
+                                <option value="120">Bari</option>
+                                <option value="150">Palermo</option>
                             </select>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6">
+                        <div class="row pt-2"> <!--DESTINAZIONE-->
+                            <div class="col-12 col-md-6 my-1 py-1">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioEuropa" onclick="mostraSelect('select-europa', 'select-mondo')">
+                                    <label class="form-check-label" for="flexRadioEuropa">
                                         Europa
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioMondo" onclick="mostraSelect('select-mondo', 'select-europa')">
+                                    <label class="form-check-label" for="flexRadioMondo">
                                         Intercontinentale
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <select class="form-select" aria-label="Default select example">
+                            <div class="col-12 col-md-6 my-1 py-1">
+                                <select class="form-select" id="select-europa" aria-label="Default select example">
                                     <option selected>Mete europee</option>
-                                    <option value="60">Francia</option>
-                                    <option value="80">Inghilterr</option>
-                                    <option value="100">Spagna</option>
+                                    <option value="300">Francia</option>
+                                    <option value="350">Inghilterra</option>
+                                    <option value="400">Spagna</option>
+                                    <option value="450">Grecia</option>
+                                    <option value="500">Germania</option>
                                 </select>
-                                <select class="form-select hidden" aria-label="Default select example">
+                                <select class="form-select hidden" id="select-mondo" aria-label="Default select example">
                                     <option selected>Mete intercontinentali</option>
-                                    <option value="60">Milano</option>
-                                    <option value="80">Roma</option>
-                                    <option value="100">Napoli</option>
+                                    <option value="600">Oceania</option>
+                                    <option value="700">Stati Uniti</option>
+                                    <option value="800">Asia</option>
+                                    <option value="900">Nord America</option>
+                                    <option value="1000">Sud America</option>
+                                    <option value="1100">Africa</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="container hidden" id="tre"> <!--  CONTAINER TRE  -->
-                        PAGINA TRE
+                    <div class="container text-center text-dark hidden" id="tre"> <!--  CONTAINER TRE  -->
+                        <div class="row"> <!--SISTEMAZIONE-->
+                            <div class="col-12 col-md-6">
+                                <select class="form-select p-1 m-1" id="sistemazione" aria-label="Default select example">
+                                    <option selected>Sistemazione</option>
+                                    <option value="50">Ostello</option>
+                                    <option value="100">B&B</option>
+                                    <option value="200">Hotel</option>
+                                    <option value="300">Resort</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="floatingDayNum" placeholder="giorni">
+                                    <label for="floatingDayNum">Numero di giorni</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> <!--VIAGGIATORI-->
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="floatingViagNum" placeholder="viaggiatori">
+                                    <label for="floatingViagNum">Numero di viaggiatori</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMinor">
+                                    <label class="form-check-label rounded p-1" for="flexCheckMinor" style="background-color: #add9e7;">
+                                        Ci sono minorenni?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="container hidden" id="quattro"> <!--  CONTAINER QUATTRO  -->
-                        RESOCONTO
+                        <div class="row text-center">
+                            <h5>Riepilogo</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-left" style="border-right: solid; border-color: #FBD26C;">
+                                <div class="row"  style="font-size: small;">
+                                    <div class="col-5 pe-0">
+                                        Nome <br>
+                                        Cognome <br>
+                                        Indirizzo <br>
+                                        Data di nascita <br> 
+                                        Partenza <br>
+                                        Destinazione <br>
+                                        Sistemazione <br>
+                                        Viaggiatori <br>
+                                        Giorni <br>
+                                        Minorenni <br>
+                                    </div>
+                                    <div class="col-7 ps-0">
+                                        :<span id="showNome"></span> <br>
+                                        :<span id="showCognome"></span> <br>
+                                        :<span id="showIndirizzo"></span> <br>
+                                        :<span id="showNascita"></span> <br>
+                                        :<span id="showPartenza"></span> <br>
+                                        :<span id="showDestinazione"></span> <br>
+                                        :<span id="showSistemazione"></span> <br>
+                                        :<span id="showViaggiatori"></span> <br>
+                                        :<span id="showGiorni"></span> <br>
+                                        :<span id="showMinorenni"></span> <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 text-center">
+                                <p>I dati inseriti sono corretti?</p>
+                                <input type="submit" value="invio">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -500,7 +575,36 @@
             const numQuattro = document.getElementById('index-quattro');
             //definisco la pagina iniziale visualizzata
             let page = 1;
+            //prendo tutti gli elementi del form
+            let preventivo = document.forms[1];
+            
             function cambio(operazione) {
+                //controllo se dal container 1 è stata inserita la data prima di cambiare pagina
+                if (page==1) {
+                    //imposto la data di nascita
+                    let day = preventivo.elements['giorno'];
+                    let month = preventivo.elements['mese'];
+                    let year = preventivo.elements['anno'];
+                    let nascita = new Date();
+                    nascita.setDate(day.value);
+                    nascita.setMonth((month.value-1));
+                    nascita.setFullYear(year.value);
+            
+                    //imposto la data attuale
+                    const oggi = new Date();
+                    let timeDiff = Math.abs(oggi - nascita);
+                    let anni = Math.floor(timeDiff / (1000*60*60*24*365.25));
+                    const minorenni = preventivo.elements['flexCheckMinor'];
+                    if (anni<18) {
+                        minorenni.setAttribute('checked', '');
+                        minorenni.setAttribute('disabled', '');
+                    } else {
+                        minorenni.removeAttribute('checked');
+                        minorenni.removeAttribute('disabled');
+                    }
+
+                }
+
                 //il contatore della pagina non può essere minore di 1 o maggiore di 4
                 if((page<4&&operazione=='avanti')||(page>1&&operazione=='indietro')) {
                     //aggiorno il contatore della pagina visualizzata
@@ -517,6 +621,9 @@
                             pagTre.classList.remove('hidden')
                             numTre.classList.add('on');
                         } else if (page==4) {
+                            //prima di mostrare il container 4
+                            //riempio il resoconto con i dati immessi
+                            resoconto();
                             pagTre.classList.add('hidden');
                             pagQuattro.classList.remove('hidden');
                             numQuattro.classList.add('on');
@@ -539,6 +646,119 @@
                             pagUno.classList.remove('hidden');
                         }
                     }
+                }
+            }
+            function resoconto () {
+                //estrapolo tutti i valori del form
+                //estrapolo il nome
+                let nome = preventivo.elements['floatingInputNome'];
+                document.getElementById('showNome').innerText = " " + nome.value;
+                //estrapolo il cognome
+                let cognome = preventivo.elements['floatingInputCognome'];
+                document.getElementById('showCognome').innerText = " " + cognome.value;
+                //estrapolo l'indirizzo
+                let indirizzo = preventivo.elements['floatingInputIndirizzo'];
+                document.getElementById('showIndirizzo').innerText = " " + indirizzo.value;
+                //estrapolo la data di nascita
+                let ggNascita = preventivo.elements['giorno'];
+                let mmNascita = preventivo.elements['mese'];
+                let yyNascita = preventivo.elements['anno'];
+                let dataNascita = " " + ggNascita.value + "-" + mmNascita.value + "-" + yyNascita.value;
+                if ((ggNascita.value!='GG')&&(mmNascita.value!='MM')&&(yyNascita!='YYYY')) {
+                    //non mostro come data di nascita GG/MM/YYYY
+                    console.log(dataNascita);
+                    document.getElementById('showNascita').innerHTML = dataNascita;
+                }
+                //estrapolo la partenza
+                let partenza = preventivo.elements['partenze'];
+                if (partenza.value==60) {
+                    document.getElementById('showPartenza').innerText = " Milano";
+                } else if (partenza.value==80) {
+                    document.getElementById('showPartenza').innerText = " Roma";
+                } else if (partenza.value==100) {
+                    document.getElementById('showPartenza').innerText = " Napoli";
+                } else if (partenza.value==120) {
+                    document.getElementById('showPartenza').innerText = " Bari";
+                } else if (partenza.value==150) {
+                    document.getElementById('showPartenza').innerText = " Palermo";
+                }
+                //estrapolo la destinazione
+                //controllo se la destinazione è europea o intercontinentale
+                let radioEu = preventivo.elements['flexRadioEuropa'];
+                let radioMnd = preventivo.elements['flexRadioMondo'];
+                console.log(radioMnd);
+                let destinazione;
+                document.getElementById('showDestinazione').innerText = "";
+                if (radioEu.classList.contains('checked')) {
+                    destinazione = preventivo.elements['select-europa'];
+                    //destinazione europea
+                    if (destinazione.value==300) {
+                        document.getElementById('showDestinazione').innerText = " Francia";
+                    } else if (destinazione.value==350) {
+                        document.getElementById('showDestinazione').innerText = " Inghilterra";
+                    } else if (destinazione.value==400) {
+                        document.getElementById('showDestinazione').innerText = " Spagna";
+                    } else if (destinazione.value==450) {
+                        document.getElementById('showDestinazione').innerText = " Grecia";
+                    } else if (destinazione.value==500) {
+                        document.getElementById('showDestinazione').innerText = " Germania";
+                    }
+                } else if (radioMnd.classList.contains('checked')) {
+                    destinazione = preventivo.elements['select-mondo'];
+                    console.log('ok');
+                    //destinazione intercontinentale
+                    if (destinazione.value==600) {
+                        document.getElementById('showDestinazione').innerText = " Oceania";
+                    } else if (destinazione.value==700) {
+                        document.getElementById('showDestinazione').innerText = " Stati Uniti";
+                    } else if (destinazione.value==800) {
+                        document.getElementById('showDestinazione').innerText = " Asia";
+                    } else if (destinazione.value==900) {
+                        document.getElementById('showDestinazione').innerText = " Nord America";
+                    } else if (destinazione.value==1000) {
+                        document.getElementById('showDestinazione').innerText = " Sud America";
+                    } else if (destinazione.value==1100) {
+                        document.getElementById('showDestinazione').innerText = " Africa";
+                    }
+                }
+                //estrapolo la sistemazione
+                let sistemazione = preventivo.elements['sistemazione'];
+                if (sistemazione.value==50) {
+                    document.getElementById('showSistemazione').innerText = " Ostello";
+                } else if (sistemazione.value==100) {
+                    document.getElementById('showSistemazione').innerText = " B&B";
+                } else if (sistemazione.value==200) {
+                    document.getElementById('showSistemazione').innerText = " Hotel";
+                } else if (sistemazione.value==300) {
+                    document.getElementById('showSistemazione').innerText = " Resort";
+                }
+                //estrapolo il numero di viaggiatori
+                let viaggiatori = preventivo.elements['floatingViagNum'];
+                document.getElementById('showViaggiatori').innerText = " " + viaggiatori.value;
+                //estrapolo il numero di giorni
+                let giorni = preventivo.elements['floatingDayNum'];
+                document.getElementById('showGiorni').innerText = " " + giorni.value;
+                //controllo se ci sono minorenni
+                let minorenni = preventivo.elements['flexCheckMinor'];
+                if (minorenni.hasAttribute('checked')) {
+                    document.getElementById('showMinorenni').innerText = " Si"
+                } else {
+                    document.getElementById('showMinorenni').innerText = " No"
+                }
+            }
+            function mostraSelect(mostra, nascondi) {
+                const showSelect = document.getElementById(mostra);
+                const hideSelect = document.getElementById(nascondi);
+                if (!(hideSelect.classList.contains('hidden'))) {
+                    hideSelect.classList.add('hidden');
+                }
+                showSelect.classList.remove('hidden');
+                if (mostra =='select-europa') {
+                    document.getElementById('flexRadioEuropa').classList.add('checked');
+                    document.getElementById('flexRadioMondo').classList.remove('checked');
+                } else {
+                    document.getElementById('flexRadioMondo').classList.add('checked');
+                    document.getElementById('flexRadioEuropa').classList.remove('checked');
                 }
             }
         </script>
