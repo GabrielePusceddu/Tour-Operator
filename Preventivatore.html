@@ -424,7 +424,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMinor">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMinor" onclick="checkMinor(this)">
                                     <label class="form-check-label rounded p-1" for="flexCheckMinor" style="background-color: #add9e7;">
                                         Ci sono minorenni?
                                     </label>
@@ -467,11 +467,24 @@
                             </div>
                             <div class="col-5 text-center">
                                 <p>I dati inseriti sono corretti?</p>
-                                <input type="submit" value="invio">
+                                <button type="button" class="btn passaggio" id="invio" onclick="calcoloPreventivo()">INVIO</button>
                             </div>
                         </div>
                     </div>
                 </form>
+                <div class="container text-center hidden" id="cinque"> <!--  CONTAINER CINQUE  -->
+                    <div class="row">
+                        <h2>Preventivo</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p>Il totale da pagare è: <span id="risultato"></span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn w-25 passaggio" id="ritorno" onclick="ricalcola()">CALCOLA NUOVO PREVENTIVO</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!--FOOTER-->
@@ -577,7 +590,7 @@
             let page = 1;
             //prendo tutti gli elementi del form
             let preventivo = document.forms[1];
-            
+            //funzioni
             function cambio(operazione) {
                 //controllo se dal container 1 è stata inserita la data prima di cambiare pagina
                 if (page==1) {
@@ -596,10 +609,9 @@
                     let anni = Math.floor(timeDiff / (1000*60*60*24*365.25));
                     const minorenni = preventivo.elements['flexCheckMinor'];
                     if (anni<18) {
-                        minorenni.setAttribute('checked', '');
+                        minorenni.checked = true;
                         minorenni.setAttribute('disabled', '');
                     } else {
-                        minorenni.removeAttribute('checked');
                         minorenni.removeAttribute('disabled');
                     }
 
@@ -689,7 +701,7 @@
                 console.log(radioMnd);
                 let destinazione;
                 document.getElementById('showDestinazione').innerText = "";
-                if (radioEu.classList.contains('checked')) {
+                if (radioEu.checked) {
                     destinazione = preventivo.elements['select-europa'];
                     //destinazione europea
                     if (destinazione.value==300) {
@@ -703,9 +715,8 @@
                     } else if (destinazione.value==500) {
                         document.getElementById('showDestinazione').innerText = " Germania";
                     }
-                } else if (radioMnd.classList.contains('checked')) {
+                } else if (radioMnd.checked) {
                     destinazione = preventivo.elements['select-mondo'];
-                    console.log('ok');
                     //destinazione intercontinentale
                     if (destinazione.value==600) {
                         document.getElementById('showDestinazione').innerText = " Oceania";
@@ -740,7 +751,7 @@
                 document.getElementById('showGiorni').innerText = " " + giorni.value;
                 //controllo se ci sono minorenni
                 let minorenni = preventivo.elements['flexCheckMinor'];
-                if (minorenni.hasAttribute('checked')) {
+                if (minorenni.checked) {
                     document.getElementById('showMinorenni').innerText = " Si"
                 } else {
                     document.getElementById('showMinorenni').innerText = " No"
@@ -753,13 +764,40 @@
                     hideSelect.classList.add('hidden');
                 }
                 showSelect.classList.remove('hidden');
-                if (mostra =='select-europa') {
-                    document.getElementById('flexRadioEuropa').classList.add('checked');
-                    document.getElementById('flexRadioMondo').classList.remove('checked');
-                } else {
-                    document.getElementById('flexRadioMondo').classList.add('checked');
-                    document.getElementById('flexRadioEuropa').classList.remove('checked');
+            }
+            function calcoloPreventivo() {
+                //calcolo il preventivo
+                let partenza = preventivo.elements['partenze'].value;
+                let destinazione = 0;
+                if (preventivo.elements['flexRadioEuropa'].checked) {
+                    destinazione = preventivo.elements['select-europa'].value;
+                } else if (preventivo.elements['flexRadioMondo']) {
+                    destinazione = preventivo.elements['select-mondo'].value;
                 }
+                let sistemazione = preventivo.elements['sistemazione'].value;
+                let giorni = preventivo.elements['floatingDayNum'].value;
+                let viaggiatori = preventivo.elements['floatingViagNum'].value;
+                //calcolo il costo del viaggio per singola persona
+                let viaggio = parseInt(partenza) + parseInt(destinazione);
+                //calcolo il costo della sistemazione per la durata del viaggio a persona
+                let alloggio = sistemazione * giorni;
+                //calcolo il costo totale della vacanza a persona
+                let costo = parseInt(viaggio) + parseInt(alloggio);
+                costo = costo * viaggiatori;
+                //controllo se ci sono minorenni
+                if (preventivo.elements['flexCheckMinor'].checked) {
+                    totale = costo - (costo * 0.1);
+                } else {
+                    totale = costo;
+                }
+                document.getElementById('risultato').innerText = totale;
+                //mostro il risultato
+                document.getElementById('quattro').classList.add('hidden');
+                document.getElementById('cinque').classList.remove('hidden');
+            }
+            function ricalcola() {
+                document.getElementById('cinque').classList.add('hidden');
+                document.getElementById('uno').classList.remove('hidden');
             }
         </script>
     </body>
