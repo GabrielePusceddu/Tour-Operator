@@ -15,6 +15,10 @@
                 color:#EF7365;
             }
 
+            #wizard h3 {
+                color:#EF7365;
+            }
+
             #descizione_prev {
                 background-color: #add9e7;
             }
@@ -45,7 +49,6 @@
 
             .passaggio:hover {
                 border-style: solid;
-                border-width: 2px;
                 border-color: #FBD26C;
                 text-decoration: underline;
             }
@@ -54,6 +57,11 @@
             .footer {
                 color: white;
                 margin-top: 80px;
+                background-color: #366880;
+                background-size: 2000px;
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+
             }
 
             .footer img {
@@ -61,21 +69,17 @@
                 height: 30px;
             }
 
-            .image img {
-                width: 200px !important; 
-                height: 100px !important;
-            }
-
             .footer a {
                 color: white;
                 text-decoration: none;
+                margin-bottom: 70px !important;
             }
         </style>
     </head>
     <body style="font-family: Poppins, sans-serif;">
         <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: #f4f4f4;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./Home.html">
+                <a class="navbar-brand" href="#">
                     <img src="IMMAGINI PROGETTO/png-clipart-tour-operator-logo-tours-graphic-design-egipto-paquetes-de-vacaciones-tour-operator-logo.png"
                         alt="Logo" width="200" height="100">
                 </a>
@@ -87,18 +91,29 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="./destinazioni.html" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Destinazioni
+                                Chi Siamo
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="./ChiSiamo.html">Chi Siamo</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="./Alloggi.html" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Destinazioni
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./destinazioni.html">Tutte le destinazioni</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Alloggi
                             </a>
@@ -120,9 +135,9 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="./LastMinute.html" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Last Minute
+                                Preventivo
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -130,17 +145,7 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="./ChiSiamo.html" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Chi Siamo
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                     <div class="dropdown" style="margin-right: 10px;">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -150,13 +155,13 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./Accedi.html">Accedi</a></li>
                             <li><a class="dropdown-item" href="./Registrati.html">Registrati</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
                     <br>
                     <form class="d-flex" role="search" style="margin-top: 12px;">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit"
+                            style="color: #2e92a9; border-color: #2e92a9; ">Search</button>
                     </form>
     
                 </div>
@@ -172,11 +177,9 @@
         </nav>
         <!--FINE HEADER-->
         <!--TITOLO + TESTO-->
-        <div class="container-fluid text-center mt-0 mb-3 shadow" id="descizione_prev">
+        <div class="container-fluid text-center mt-0 mb-3 pb-2 shadow" id="descizione_prev">
             <h1 class="mb-2">PREVENTIVO</h1>
             <p class="my-1">Inserisci qui i tuoi dati e ottieni il preventivo di quanto dovresti spendere con noi!</p>
-            <br>
-            <p class="my-1" style="font-size: x-small;">I costi effettivi potrebbero subire variazioni</p>
         </div>
         <!--PREVENTVO-->
         <div class="container text-light w-50 shadow-lg rounded mt-5" id="wizard">
@@ -196,25 +199,28 @@
             <div class="row py-1" id="form-row" style="height: 275px">
                 <form id="preventivo" name="preventivatore" action="">
                     <div class="container text-center text-dark" id="uno"> <!--  CONTAINER UNO  -->
-                        <div class="row">
-                            <div class="form-floating mb-3 col-12 col-md-6"> <!--NOME-->
+                        <div class="row m-2">
+                            <h3>Inserisci qui i tuoi dati personali</h2>
+                        </div>
+                        <div class="row"> <!--NOMINATIVO-->
+                            <div class="form-floating my-2 mx-4 col-12 col-md-5"> <!--NOME-->
                                 <input type="text" class="form-control" id="floatingInputNome" placeholder="Nome">
-                                <label for="floatingInputNome">Nome</label>
+                                <label class="ms-2" for="floatingInputNome">Nome</label>
                             </div>
-                            <div class="form-floating mb-3 col-12 col-md-6"> <!--COGNOME-->
+                            <div class="form-floating my-2 mx-4 col-12 col-md-5"> <!--COGNOME-->
                                 <input type="text" class="form-control" id="floatingInputCognome" placeholder="Cognome">
-                                <label for="floatingInputCognome">Cognome</label>
+                                <label class="ms-2" for="floatingInputCognome">Cognome</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-floating mb-3 col-12 col-md-6"> <!--INDIRIZZO-->
+                        <div class="row mt-3"> <!--INDIRIZZO E NASCITA-->
+                            <div class="form-floating my-2 mx-4 col-12 col-md-5"> <!--INDIRIZZO-->
                                 <input type="text" class="form-control" id="floatingInputIndirizzo" placeholder="Indirizzo">
-                                <label for="floatingInputIndirizzo">Via/Piazza</label>
+                                <label class="ms-2" for="floatingInputIndirizzo">Via/Piazza</label>
                             </div>
-                            <div class="form-floating mb-3 col-12 col-md-6"> <!--DATA-->
-                                <div class="row pt-2">
-                                    <div class="col-12 col-md-4 my-1 px-0 pe-md-1">
-                                        <select class="form-select" id="giorno">
+                            <div class="form-floating my-2 mx-4 col-12 col-md-5"> <!--DATA-->
+                                <div class="row pt-2 px-1">
+                                    <div class="col-12 col-md-4 my-1 ps-2 pe-0 me-0" style="width: 75px">
+                                        <select class="form-select ps-1 pe-0 me-0" id="giorno">
                                             <option style="display: none;">GG</option>
                                             <option value="1">01</option>
                                             <option value="2">02</option>
@@ -249,8 +255,8 @@
                                             <option value="31">31</option>
                                         </select>
                                     </div>
-                                    <div class="col-12 col-md-4 my-1 px-0 pe-md-1">
-                                        <select class="form-select" id="mese">
+                                    <div class="col-12 col-md-4 my-1 px-0 mx-0" style="width: 75px">
+                                        <select class="form-select ps-1 mx-0" id="mese">
                                             <option style="display: none;">MM</option>
                                             <option value="1">01</option>
                                             <option value="2">02</option>
@@ -266,8 +272,8 @@
                                             <option value="12">12</option>
                                         </select>
                                     </div>
-                                    <div class="col-12 col-md-4 my-1 px-0">
-                                        <select class="form-select" id="anno">
+                                    <div class="col-12 col-md-4 my-1 pe-0 px-0 ms-0">
+                                        <select class="form-select ps-1 ms-0" id="anno">
                                             <option style="display: none;">YYYY</option>
                                             <option value="1950">1950</option>
                                             <option value="1951">1951</option>
@@ -351,7 +357,10 @@
                         </div>
                     </div>
                     <div class="container text-center hidden" id="due"> <!--  CONTAINER DUE  -->
-                        <div class="row p-1 me-1"> <!--PARTENZA-->
+                        <div class="row mt-2">
+                            <h3>Inserisci qui i dati del viaggio</h3>
+                        </div>
+                        <div class="row p-1 me-1 mt-3 mb-3"> <!--PARTENZA-->
                             <select class="form-select p-1 m-1" aria-label="Default select example" id="partenze">
                                 <option selected>Partenza</option>
                                 <option value="60">Milano</option>
@@ -362,21 +371,21 @@
                             </select>
                         </div>
                         <div class="row pt-2"> <!--DESTINAZIONE-->
-                            <div class="col-12 col-md-6 my-1 py-1">
-                                <div class="form-check">
+                            <div class="col-12 col-md-6 py-1">
+                                <div class="form-check mb-4">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioEuropa" onclick="mostraSelect('select-europa', 'select-mondo')">
-                                    <label class="form-check-label" for="flexRadioEuropa">
+                                    <label class="form-check-label ps-0" for="flexRadioEuropa">
                                         Europa
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check my-3">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioMondo" onclick="mostraSelect('select-mondo', 'select-europa')">
-                                    <label class="form-check-label" for="flexRadioMondo">
+                                    <label class="form-check-label ps-0" for="flexRadioMondo">
                                         Intercontinentale
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 my-1 py-1">
+                            <div class="col-12 col-md-6 my-3 py-1">
                                 <select class="form-select" id="select-europa" aria-label="Default select example">
                                     <option selected>Mete europee</option>
                                     <option value="300">Francia</option>
@@ -398,9 +407,12 @@
                         </div>
                     </div>
                     <div class="container text-center text-dark hidden" id="tre"> <!--  CONTAINER TRE  -->
-                        <div class="row"> <!--SISTEMAZIONE-->
-                            <div class="col-12 col-md-6">
-                                <select class="form-select p-1 m-1" id="sistemazione" aria-label="Default select example">
+                        <div class="row mt-2">
+                            <h3>Inserisci qui i dati sulla permanenza</h3>
+                        </div>
+                        <div class="row mt-3 mb-3"> <!--SISTEMAZIONE-->
+                            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                                <select class="form-select" id="sistemazione" aria-label="Default select example">
                                     <option selected>Sistemazione</option>
                                     <option value="50">Ostello</option>
                                     <option value="100">B&B</option>
@@ -408,23 +420,21 @@
                                     <option value="300">Resort</option>
                                 </select>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" id="floatingDayNum" placeholder="giorni">
-                                    <label for="floatingDayNum">Numero di giorni</label>
-                                </div>
+                            <div class="form-floating col-12 col-md-6 d-flex align-items-center justify-content-center">
+                                <input type="number" class="form-control" id="floatingDayNum" placeholder="giorni">
+                                <label for="floatingDayNum">Giorni</label>
                             </div>
                         </div>
-                        <div class="row"> <!--VIAGGIATORI-->
-                            <div class="col-12 col-md-6">
+                        <div class="row d-flex align-items-center"> <!--VIAGGIATORI-->
+                            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                                 <div class="form-floating mb-3">
                                     <input type="number" class="form-control" id="floatingViagNum" placeholder="viaggiatori">
                                     <label for="floatingViagNum">Numero di viaggiatori</label>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMinor" onclick="checkMinor(this)">
+                            <div class="col-12 col-md-6 d-flex align-items-center">
+                                <div class="form-check d-flex align-items-center justify-content-center">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckMinor" onclick="checkMinor(this)">
                                     <label class="form-check-label rounded p-1" for="flexCheckMinor" style="background-color: #add9e7;">
                                         Ci sono minorenni?
                                     </label>
@@ -434,7 +444,7 @@
                     </div>
                     <div class="container hidden" id="quattro"> <!--  CONTAINER QUATTRO  -->
                         <div class="row text-center">
-                            <h5>Riepilogo</h5>
+                            <h3>Riepilogo</h3>
                         </div>
                         <div class="row">
                             <div class="col-7 text-left" style="border-right: solid; border-color: #FBD26C;">
@@ -465,30 +475,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-5 text-center">
+                            <div class="col-5 text-center d-flex flex-column justify-content-center">
                                 <p>I dati inseriti sono corretti?</p>
                                 <button type="button" class="btn passaggio" id="invio" onclick="calcoloPreventivo()">INVIO</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                <div class="container text-center hidden" id="cinque"> <!--  CONTAINER CINQUE  -->
-                    <div class="row">
-                        <h2>Preventivo</h2>
+                <div class="container hidden text-center" id="cinque"> <!--  CONTAINER CINQUE  -->
+                    <div class="row d-flex align-items-start">
+                        <h3>Preventivo</h3>
                     </div>
-                    <div class="row">
+                    <div class="row d-flex align-items-center justify-content-center">
                         <div class="col-12 col-md-6">
                             <p>Il totale da pagare è: <span id="risultato"></span></p>
                         </div>
+                        <div class="col-12 col-md-6" style="border-left: solid; border-color:#FBD26C;">
+                            <p>Sconti applicati:<span id="sconto"></span></p>
+                            <p>Totale a persona:<span id="totPersona"></span></p>
+                        </div>
                     </div>
-                    <div class="row">
+                    <div class="row d-flex align-items-center justify-content-center mt-2">
                         <button type="button" class="btn w-25 passaggio" id="ritorno" onclick="ricalcola()">CALCOLA NUOVO PREVENTIVO</button>
                     </div>
                 </div>
             </div>
         </div>
         <!--FOOTER-->
-        <footer class="footer pt-2" style="font-family: Poppins, sans-serif; background-color: #366880;">
+        <footer class="footer w-100" style="font-family: Poppins, sans-serif;  ">
+            <br>
+            <br>
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 col-12">
@@ -497,7 +513,7 @@
                         <p>Tour Calypso S.R.L.S</p>
                         <p><strong>Roma</strong> , Via dei Cerchi 17, 00186</p>
                         <p><strong>Partita IVA: </strong>03842567922</p>
-    
+        
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                         <h3>Contatti</h3>
@@ -505,73 +521,95 @@
                         <a href="#">
                             <img src="IMMAGINI PROGETTO/icons8-facebook-500.png" alt="Facebook">
                         </a>
-                        <br>
+        
                         <a href="#">
                             <img src="IMMAGINI PROGETTO/icons8-instagram-500.png" alt="Instagram">
                         </a>
-                        <br>
+        
                         <a href="#">
                             <img src="IMMAGINI PROGETTO/icons8-twitterx-500.png" alt="Twitter">
                         </a>
-                        <br>
+        
                         <a href="#">
                             <img src="IMMAGINI PROGETTO/icons8-youtube-logo-500.png" alt="Youtube">
                         </a>
+                        <br>
                         <br>
                         <a class="telefono" href="#">
                             <img src="IMMAGINI PROGETTO/telefono.png" alt="telefono">
                             <span> +39 586 718 8296</span>
                         </a>
-    
+                        <br>
                         <br>
                         <a class="email" href="#">
                             <img src="IMMAGINI PROGETTO/email.png" alt="email">
                             <span> calypsotour@pec.it</span>
                         </a>
-    
-    
+        
+        
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <h3>Link Utili</h3>
-                        <br>
-                        <a href="./Home.html">Home</a>
-                        <br>
-                        <a href="./ChiSiamo.html">Chi siamo</a>
-                        <br>
-                        <a href="#">Servizi</a>
-                        <br>
-                        <a href="#">Contatti</a>
-                        <br>
-                        <a href="#">Metodi di Pagamento</a>
-                        <br>
-                        <a href="#">Bagaglio</a>
-                        <br>
-                        <a href="#">Assicurazioni</a>
+                        <div class="linkbut">
+                            <h3>Link Utili</h3>
+                            <br>
+                            <a href="./Home.html">Home</a>
+                            <br>
+                            <br>
+                            <a href="./ChiSiamo.html">Chi siamo</a>
+                            <br>
+                            <br>
+                            <a href="#">Servizi</a>
+                            <br>
+                            <br>
+                            <a href="#">Contatti</a>
+                            <br>
+                            <br>
+                            <a href="#">Metodi di Pagamento</a>
+                            <br>
+                            <br>
+                            <a href="#">Bagaglio</a>
+                            <br>
+                            <br>
+                            <a href="#">Assicurazioni</a>
+                            <br>
+                            <br>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <h3>Calypso World</h3>
-                        <br>
-                        <a href="#">Lavora con Noi</a>
-                        <br>
-                        <a href="#">Il Gruppo</a>
-                        <br>
-                        <a href="./Accedi.html">Area Riservata</a>
-                        <br>
-                        <a href="#">Convenzioni</a>
-                        <br>
-                        <a href="#">Escursioni</a>
-                        <br>
-                        <a href="#">FAQ</a>
-                        <br>
-                        <a href="#">Guida per gli Utenti</a>
-                        <br>
-                        <a href="#">Guida per i Gestori</a>
+                        <div class="linkbut">
+                            <h3>Calypso World</h3>
+                            <br>
+                            <a href="#">Lavora con Noi</a>
+                            <br>
+                            <br>
+                            <a href="#">Il Gruppo</a>
+                            <br>
+                            <br>
+                            <a href="./Accedi.html">Area Riservata</a>
+                            <br>
+                            <br>
+                            <a href="#">Convenzioni</a>
+                            <br>
+                            <br>
+                            <a href="#">Escursioni</a>
+                            <br>
+                            <br>
+                            <a href="#">FAQ</a>
+                            <br>
+                            <br>
+                            <a href="#">Guida per gli Utenti</a>
+                            <br>
+                            <br>
+                            <a href="#">Guida per i Gestori</a>
+                            <br>
+                            <br>
+                        </div>
                     </div>
-                    
-                    
+        
+        
                 </div>
             </div>
-        </footer>
+        </footer>        
         <!--JS BOOTSTRAP-->
         <script src="./JS/bootstrap.bundle.min.js"></script>
         <!--JS-->
@@ -787,17 +825,20 @@
                 //controllo se ci sono minorenni
                 if (preventivo.elements['flexCheckMinor'].checked) {
                     totale = costo - (costo * 0.1);
+                    document.getElementById('sconto').innerText = " 10%";
                 } else {
                     totale = costo;
+                    document.getElementById('sconto').innerText = " 0%";
                 }
-                document.getElementById('risultato').innerText = totale;
+                document.getElementById('risultato').innerText = " " + totale+"€";
+                document.getElementById('totPersona').innerText = " " + (parseFloat(totale)/parseFloat(viaggiatori)) + "€";
                 //mostro il risultato
-                document.getElementById('quattro').classList.add('hidden');
+                preventivo.classList.add('hidden');
                 document.getElementById('cinque').classList.remove('hidden');
             }
             function ricalcola() {
                 document.getElementById('cinque').classList.add('hidden');
-                document.getElementById('uno').classList.remove('hidden');
+                preventivo.classList.remove('hidden');
             }
         </script>
     </body>
