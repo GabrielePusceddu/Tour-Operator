@@ -101,7 +101,7 @@
                                 Alloggi
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="./Alloggi.html">Tutti i nostri alloggi</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
@@ -175,8 +175,11 @@
                         <label for="email_utente">Indirizzo Email</label>
                     </div>
                     <div class="form-floating mx-2 mb-2">
-                        <input type="password" class="form-control" name="password" id="pw_accesso" onclick="resetta()" placeholder="password">
-                        <label for="pw_accesso">Password</label>
+                        <div class="form-floating mx-0 mb-2" style="display: flex; flex-direction: row;">
+                            <input type="password" class="form-control" name="password" id="pw_accesso" onclick="resetta()" placeholder="Password" aria-describedby="basic-addon2">
+                            <label for="pw_accesso">Password</label>
+                            <span class="input-group-text pw-eye" id="basic-addon2" onclick="showHidePW()"><img src="./IMMAGINI PROGETTO/eye.png" class="opacity-50 accesso" height="45px"><img src="./IMMAGINI PROGETTO/hide.png" class="opacity-50 accesso hidden" height="45px"></span>
+                        </div>
                         <div style="display: flex; justify-content: space-between;">
                             <p class="text-start mt-1" style="color: grey; font-size: x-small;"><a href="#">informativa per la privacy</a></p>
                             <p class="text-end mt-1" style="color: grey; font-size: x-small;"><a href="#">Password dimenticata?</a></p>
@@ -227,6 +230,19 @@
                 //nascondo nuovamente il messaggio di errore campo mancante
                 if(!errore.classList.contains('hidden')) {
                     errore.classList.add('hidden');
+                }
+            }
+            function showHidePW() {
+                //prendo le icone da cambiare
+                let icona = document.getElementsByClassName('accesso');
+                let password = document.getElementById('pw_accesso');;
+                if (password.type =='password') {
+                    password.type='text';
+                } else {
+                    password.type='password';
+                }
+                for (let img of icona) {
+                    img.classList.toggle('hidden');
                 }
             }
         </script>
