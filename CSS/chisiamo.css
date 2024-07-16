@@ -1,15 +1,27 @@
 .image img {
-    width: 200 !important; 
+    width: 200 !important;
     height: 100 !important;
 }
+
+.nav li {
+    padding-right: 50px;
+    font-size: x-large;
+    color: #2e92a9;
+}
+.nav a {
+    color: #2e92a9;
+}
+
 .footer {
     color: white;
     margin-top: 80px;
 }
+
 .footer img {
     width: 30px;
     height: 30px;
 }
+
 .footer a {
     color: white;
     text-decoration: none;
@@ -28,12 +40,12 @@
 
 
 .card {
-    margin: 5%  
+    margin: 5%
 }
 
 .card-title {
     color: white;
-    
+
 }
 
 .card-text {

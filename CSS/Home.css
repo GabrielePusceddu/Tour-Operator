@@ -67,6 +67,40 @@
     right: 110px;
 
 }
+@media screen and (max-width: 900px)   {
+    .modbutton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        margin-top: 10px;
+        
+    }
+    }
+
+    @media screen and (max-width: 900px)   {
+        .modbutton2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-top: 10px;
+            
+        }
+        
+    }
+
+    @media screen and (max-width: 900px)   {
+        .modbutton3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-top: 10px;
+            
+        }
+        
+    }
 
 .form-check {
     color: #2e92a9;
