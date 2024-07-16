@@ -11,6 +11,45 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <!--CSS-->
         <style>
+            .amministrazione_card {
+                border-width: 5px;
+            }
+
+            #nav_amministrazione .nav-link {
+                background-color: #366880;
+                color: #f4f4f4;
+            }
+
+            #nav_amministrazione .active {
+                background-color: #add9e7;
+                border-bottom: 0px;
+                color: black;
+                text-decoration: underline;
+            }
+
+            .amministrazione {
+                background-color: #add9e7;
+            }
+
+            .amministrazione_card {
+                background-color: #f4f4f4;
+            }
+
+            #vendite_anno {
+                color:#127d02;
+            }
+
+            #vendite_mese {
+                color:#127d02;
+            }
+
+            .positivo {
+                color:#127d02;
+            }
+
+            .negativo {
+                color: #f81900;
+            }
 
             /*FOOTER*/
             .footer {
@@ -133,7 +172,108 @@
             </div>
         </nav>
         <!--FINE HEADER-->
-        
+        <div class="nav" id="nav_amministrazione"> <!--NAVIGAZIONE AMMINISTRATORE-->
+            <ul class="nav nav-tabs ms-0 ps-4 mt-4">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Destinazione</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Alloggi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Utenti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Offerte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messaggi & Recensioni</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid shadow amministrazione text-center pb-2 text-center">
+            <div class="row pt-4"> <!--TITOLO-->
+                <div class="col">
+                    <h1>AMMINISTRAZIONE</h1>
+                </div>
+            </div>
+            <div class="row my-3 mx-2 px-5 d-flex align-items-stretch"> <!--VENDITE-->
+                <div class="col-12 col-md-6 my-1"> <!--REPORT VENDITE-->
+                    <div class="card amministrazione_card rounded shadow border-end-0 border-top-0 border-bottom-0 h-100" style="border-color: #f81900;">
+                        <div class="card-body h-100">
+                            <h5 class="card-title mt-2 mb-4">Report vendite</h5>
+                            <div class="row">
+                                <div class="col-12 col-md-6 my-2">
+                                    Vendite dell'anno: <span id="vendite_anno">100000 €</span>
+                                </div>
+                                <div class="col-12 col-md-6 my-2">
+                                    Rispetto lo scorso anno: <span class="negativo" id="diff_anno">-20000 €</span>
+                                </div>
+                                <div class="col-12 col-md-6 my-3">
+                                    Vendite del mese: <span id="vendite_mese">20000 €</span>
+                                </div>
+                                <div class="col-12 col-md-6 my-3">
+                                    Rispetto lo scorso mese: <span class="positivo" id="diff_anno">+200 €</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 my-1"> <!--NUOVE PRENOTAZIONI-->
+                    <div class="card amministrazione_card rounded shadow border-end-0 border-top-0 border-bottom-0 h-100" style="border-color: #127d02;">
+                        <div class="card-body h-100">
+                            <h5 class="card-title mt-2 mb-4">Nuove prenotazioni</h5>
+                            <div class="container overflow-y-auto rounded" style="border-style: solid; max-height: 110px;">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Prenotazione 1</li>
+                                    <li class="list-group-item">Prenotazione 2</li>
+                                    <li class="list-group-item">Prenotazione 3</li>
+                                    <li class="list-group-item">Prenotazione 4</li>
+                                    <li class="list-group-item">Prenotazione 5</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 mx-2 px-5 d-flex align-items-stretch"> <!--CLIENTELA-->
+                <div class="col-12 col-md-6"> <!--RECENSIONI-->
+                    <div class="card amministrazione_card rounded shadow border-end-0 border-top-0 border-bottom-0 h-100" style="border-color: #0134ed;">
+                        <div class="card-body h-100">
+                            <h5 class="card-title mt-2 mb-4">Recensioni</h5>
+                            <div class="container overflow-y-auto rounded" style="border-style: solid; max-height: 110px;">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Recensione 1</li>
+                                    <li class="list-group-item">Recensione 2</li>
+                                    <li class="list-group-item">Recensione 3</li>
+                                    <li class="list-group-item">Recensione 4</li>
+                                    <li class="list-group-item">Recensione 5</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6"> <!--MESSAGGI-->
+                    <div class="card amministrazione_card rounded shadow border-end-0 border-top-0 border-bottom-0 h-100" style="border-color: #a1b900;">
+                        <div class="card-body h-100">
+                            <h5 class="card-title mt-2 mb-4">Messaggi</h5>
+                            <div class="container overflow-y-auto rounded" style="border-style: solid; max-height: 110px;">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Messaggio 1</li>
+                                    <li class="list-group-item">Messaggio 2</li>
+                                    <li class="list-group-item">Messaggio 3</li>
+                                    <li class="list-group-item">Messaggio 4</li>
+                                    <li class="list-group-item">Messaggio 5</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--FOOTER-->
         <footer class="footer w-100" style="font-family: Poppins, sans-serif;  ">
             <br>
