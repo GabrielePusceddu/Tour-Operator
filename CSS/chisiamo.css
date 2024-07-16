@@ -28,7 +28,7 @@
     font-size: 40px;
     color: black;
 }
-.row {
+.body .row {
     border-style: solid;
     border-color: #2e92a9;
     border-radius: 12px;
@@ -42,10 +42,11 @@
     background-size: 2000px;
     margin-left: 0px !important;
     margin-right: 0px !important;
-
 }
 
-
+.footer .row {
+    border-style: none !important;
+}
 .footer img {
     width: 30px;
     height: 30px;
