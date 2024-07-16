@@ -28,6 +28,12 @@
     font-size: 40px;
     color: black;
 }
+.row {
+    border-style: solid;
+    border-color: #2e92a9;
+    border-radius: 12px;
+    padding: 10px;
+}
 
 .footer {
     color: white;
