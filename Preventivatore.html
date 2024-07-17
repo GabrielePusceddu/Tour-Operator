@@ -654,7 +654,7 @@
                 }
 
                 //il contatore della pagina non può essere minore di 1 o maggiore di 4
-                if((page<4&&operazione=='avanti')||(page>1&&operazione=='indietro')) {
+                if(((page<4&&operazione=='avanti')||(page>1&&operazione=='indietro'))&&(page!=5)) {
                     //aggiorno il contatore della pagina visualizzata
                     if (operazione=='avanti') {
                         page++;
@@ -833,10 +833,12 @@
                 //mostro il risultato
                 preventivo.classList.add('hidden');
                 document.getElementById('cinque').classList.remove('hidden');
+                page=5;
             }
             function ricalcola() {
                 document.getElementById('cinque').classList.add('hidden');
                 preventivo.classList.remove('hidden');
+                page=4;
             }
         </script>
     </body>
