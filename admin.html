@@ -55,6 +55,17 @@
                 display: none;
             }
 
+            .operazioni {
+                background-color: #EF7365; 
+                color:#F4F4F4;
+            }
+
+            .operazioni:hover {
+                border-style: solid;
+                border-color: #FBD26C;
+                text-decoration: underline;
+            }
+
             /*FOOTER*/
             .footer {
                 color: white;
@@ -242,7 +253,7 @@
                         <div class="card-body h-100">
                             <h5 class="card-title mt-2 mb-4"> Ultime Recensioni</h5>
                             <div class="container overflow-y-auto rounded" style="border-style: solid; max-height: 110px;">
-                                <ul class="list-group">
+                                <ul id="lista-recensioni" class="list-group">
                                     <li class="list-group-item"><span class="utente-rec">Mario Rossi</span>: <span class="titolo-rec">Ottima esperienza</span></li>
                                     <li class="list-group-item"><span class="utente-rec">Giordano Bruno</span>: <span class="titolo-rec">Esperienza scottante!</span></li>
                                     <li class="list-group-item">Recensione 3</li>
@@ -258,7 +269,7 @@
                         <div class="card-body h-100">
                             <h5 class="card-title mt-2 mb-4">Ultimi Messaggi</h5>
                             <div class="container overflow-y-auto rounded" style="border-style: solid; max-height: 110px;">
-                                <ul class="list-group">
+                                <ul id="lista-messaggi" class="list-group">
                                     <li class="list-group-item"><span class="utente-mes">Davide Ferrari</span>: <span class="anteprima-mes">Salve, vi scrivo perché...</span></li>
                                     <li class="list-group-item"><span class="utente-mes">Giovanni Verdi</span>: <span class="anteprima-mes">Salve, vorrei cancellare...</span></li>
                                     <li class="list-group-item"><span class="utente-mes">Giovanna Mancini</span>: <span class="anteprima-mes">Ho provato a prenotare...</span></li>
@@ -281,93 +292,13 @@
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Tipo</th>
                         <th scope="col">N° alloggi</th>
                         <th scope="col">Prenotazioni</th>
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="nome-de">Roma</td>
-                        <td class="tipo-de">Italiana</td>
-                        <td class="nAlloggi-de">6</td>
-                        <td class="nPrenotazioni-de">15</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Parigi</td>
-                        <td class="tipo-de">Europea</td>
-                        <td class="nAlloggi-de">4</td>
-                        <td class="nPrenotazioni-de">26</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">New York</td>
-                        <td class="tipo-de">Intercontinentale</td>
-                        <td class="nAlloggi-de">5</td>
-                        <td class="nPrenotazioni-de">10</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Palermo</td>
-                        <td class="tipo-de">Italiana</td>
-                        <td class="nAlloggi-de">8</td>
-                        <td class="nPrenotazioni-de">13</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Messico</td>
-                        <td class="tipo-de">Intercontinentale</td>
-                        <td class="nAlloggi-de">2</td>
-                        <td class="nPrenotazioni-de">7</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Berlino</td>
-                        <td class="tipo-de">Europea</td>
-                        <td class="nAlloggi-de">4</td>
-                        <td class="nPrenotazioni-de">16</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Canada</td>
-                        <td class="tipo-de">Intercontinentale</td>
-                        <td class="nAlloggi-de">9</td>
-                        <td class="nPrenotazioni-de">25</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-de">Giappone</td>
-                        <td class="tipo-de">Intercontinentale</td>
-                        <td class="nAlloggi-de">7</td>
-                        <td class="nPrenotazioni-de">22</td>
-                        <td class="operazioni-de">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
+                <tbody id="tbody-destinazioni">
+                    <!--PARTE DINAMICA-->
                 </tbody>
             </table>
         </div>
@@ -382,14 +313,14 @@
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Destinazione</th>
-                        <th scope="col">N° Prenotazioni</th>
+                        <th scope="col">N° Prenotazioni</th> <!--TOGLIERE-->
                         <th scope="col">Prezzo</th>
-                        <th scope="col">Tipo</th>
+                        <th scope="col">Tipo</th> <!--TOGLIERE-->
                         <th scope="col">Stelle</th>
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-alloggi">
                     <tr>
                         <td class="nome-al">Hotel Hassler Roma</td>
                         <td class="destinazione-al">Roma</td>
@@ -494,7 +425,7 @@
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-utenti">
                     <tr>
                         <td class="nome-ut">Mario</td>
                         <td class="cognome-ut class">Rossi</td>
@@ -625,7 +556,7 @@
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-offerte">
                     <tr>
                         <td class="nome-of">Pacchetto Caraibi</td>
                         <td class="destinazione-of">Caraibi</td>
@@ -690,7 +621,7 @@
                         <th scope="col">Voto</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-comunicazioni">
                     <tr>
                         <td class="tipo-com">Recensione</td>
                         <td class="utente-com">Mario Rossi</td>
@@ -884,6 +815,81 @@
                     btn.setAttribute('aria-current', 'page');
                 }
             }
+            function editDestinazione(id) {
+                
+            }
+
+            //modifica pagina
+            document.addEventListener('DOMContentLoaded', function() {
+                //seleziono tutti gli elementi da modificare in DASHBOARD
+                const venditeAnno = document.getElementById('vendite_anno');
+                const differenzaAnno = document.getElementById('diff_anno');
+                const venditeMese = document.getElementById('vendite_mese');
+                const differenzaMese = document.getElementById('diff_mese');
+                const recensioniNuove = document.getElementById('lista-recensioni');
+                const messaggiNuovi = document.getElementById('lista-messaggi');
+                //modifico il REPORT VENDITE
+                let totAnno;
+                let totAnnoPass;
+                let totMese;
+                let totMesePass;
+                /*fetch('http://localhost:8080/preventivi')
+                    .then(res => res.json())
+                    .then(data => {
+                        //prendo tutti il totale generato dai preventivi la cui data è compresa tra inizio anno e data attuale
+                        let oggi = new Date();
+                    })  DA FINIRE*/
+                //seleziono tutti gli elementi da modificare in DESTINAZIONI
+                const tabellaDestinazioni = document.getElementById('tbody-destinazioni');
+                //costruisco la tabella delle DESTINAZIONI
+                fetch('http://localhost:8080/destinazioni')
+                    .then(res => res.json())
+                    .then(data => {
+                        //considero ciascuna destinazione ricevuta dal DB
+                        data.forEach(destinazione => {
+                            //costruisco la riga dedicata alla singola destinazione
+                            const row = document.createElement('tr');
+                            //riempio la riga con la destinazione
+                            row.innerHTML = `
+                                <td>${destinazione.nome}</td>
+                            `;
+                            let nAlloggi;
+                            let nPrenotazioni;
+                            /*fetch('http://localhost:8080/alloggi/searchByDestinazione')
+                                .then(res => res.json())
+                                .then(data => nAlloggi=data.length)
+                            fetch('http://localhost:8080/preventivo/searchByDestinazione')
+                                .then(res => res.json())
+                                .then(data => nPrenotazioni = data.length)*/
+                            row.innerHTML+=`
+                                <td><b>WIP</b></td>
+                                <td><b>WIP</b></td>
+                                <td class="operazioni-de">
+                                    <button type="button" class="btn operazioni" onclick="editDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                    <button type="button" class="btn operazioni" onclick="deleteDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                </td>
+                            `;
+                            //inserisco la riga nel documento
+                            tabellaDestinazioni.appendChild(row);
+                        })
+                    })
+                //seleziono gli elementi da modificare in ALLOGGI
+                const tabellaAlloggi = document.getElementById('tbody-alloggi');
+                //costruisco la tabella degli ALLOGGI
+                //fetch(...) => costruisco la riga => la riempio => inserisco la riga nella tabella => riga successiva...
+                //seleziono gli oggetti da modificare in UTENTI
+                const tabellaUtenti = document.getElementById('tbody-utenti');
+                //costruisco la tabella UTENTI
+                //fetch(...) => ...
+                //seleziono gli oggetti da modificare in OFFERTE
+                const tabellaOfferte = document.getElementById('tbody-offerte');
+                //costruisco la tabella OFFERTE
+                //fetch(...) => ...
+                //seleziono gli oggetti da modificare in MESSAGGI E RECENSIONI
+                const tabellaComunicazioni = document.getElementById('tbody-comunicazioni');
+                //costruisco la tabella MESSAGGI E RECENSIONI
+                //fetch(...) => ...
+            })
         </script>
     </body>
 </html>
