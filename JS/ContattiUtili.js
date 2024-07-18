@@ -1,12 +1,12 @@
-const utenteForm = document.getElementById('contatto-form');
-const docenteId = document.getElementById('contatto-id');
+const contattoForm = document.getElementById('contatto-form');
+const contattoId = document.getElementById('contatto-id');
 const nome = document.getElementById('nome');
 const cognome = document.getElementById('cognome');
 const email = document.getElementById('email');
 const telefono = document.getElementById('telefono');
 const commento = document.getElementById('commento')
 
-utenteForm.addEventListener('submit', function (event) {
+contattoForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const id = contattoId.value;
     const method = id ? 'PUT' : 'POST';
