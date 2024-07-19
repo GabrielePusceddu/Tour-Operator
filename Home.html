@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="CSS/Home.css">
 </head>
+
 <body class="body" style="font-family: Poppins, sans-serif;">
     <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: #f4f4f4;">
         <div class="container-fluid">
@@ -31,9 +32,10 @@
                             Chi Siamo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="file:///C:/Users/gabry/Desktop/Tour%20Operator/ChiSiamo.html">La Nostra Storia</a></li>
+                            <li><a class="dropdown-item"
+                                    href="file:///C:/Users/gabry/Desktop/Tour%20Operator/ChiSiamo.html">La Nostra
+                                    Storia</a></li>
                             <li><a class="dropdown-item" href="ContattiUtili.html">Contatti</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -42,9 +44,8 @@
                             Destinazioni
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="destinazioni.html">Accedi a tutte le Destinazioni</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -54,8 +55,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Alloggi.html">Hotel</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -74,9 +73,7 @@
                             Preventivo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="Preventivatore.html">Richiedi un Preventivo</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -93,8 +90,7 @@
                 <br>
                 <form class="d-flex" role="search" style="margin-top: 12px;">
                     <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Cerca">
-                    <button class="btn btn-outline-primary" type="submit"
-                        style="border-color: #2e92a9; ">Cerca</button>
+                    <button class="btn btn-outline-primary" type="submit" style="border-color: #2e92a9; ">Cerca</button>
                 </form>
             </div>
         </div>
@@ -157,15 +153,15 @@
             <div class="col col-lg-auto">
                 <div class="modbutton4">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal4">Destinazioni</button>
+                        data-bs-target="#exampleModalToggle">Destinazioni</button>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Partenze</h1>
+                                <h1 class="modal-title text-center w-100" id="exampleModalToggleLabel">Partenze</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -173,55 +169,101 @@
                                 <div class="modalform">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="inlineRadio1">GRECIA</label>
+                                            id="validationFormCheck" value="option1" required>
+                                        <label class="form-check-label" for="validationFormCheck">FRANCIA</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="inlineRadio2">BALNEARI</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck2" value="option2" required>
+                                        <label class="form-check-label" for="validationFormCheck2">ITALIA</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
-                                        <label class="form-check-label" for="inlineRadio3">SARDEGNA</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck3" value="option3" required>
+                                        <label class="form-check-label" for="validationFormCheck3">REGNO UNITO</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
-                                        <label class="form-check-label" for="inlineRadio4">SHARM EL SHEIK
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck4" value="option4" required>
+                                        <label class="form-check-label" for="validationFormCheck4">SPAGNA
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
-                                        <label class="form-check-label" for="inlineRadio5">TUNISIA</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck5" value="option5" required>
+                                        <label class="form-check-label" for="validationFormCheck5">GERMANIA</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio6" value="option6">
-                                        <label class="form-check-label" for="inlineRadio6">CANARIE</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck6" value="option6" required>
+                                        <label class="form-check-label" for="validationFormCheck6">PAESI BASSI</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio7" value="option7">
-                                        <label class="form-check-label" for="inlineRadio7">KENYA</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck7" value="option7" required>
+                                        <label class="form-check-label" for="validationFormCheck7">REPUBBLICA CECA</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio8" value="option8">
-                                        <label class="form-check-label" for="inlineRadio8">ZANZIBAR</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck8" value="option8" required>
+                                        <label class="form-check-label" for="validationFormCheck8">GIAPPONE</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio9" value="option9">
-                                        <label class="form-check-label" for="inlineRadio9">MAIORCA</label>
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck9" value="option9" required>
+                                        <label class="form-check-label" for="validationFormCheck9">THAILANDIA</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck10" value="option10" required>
+                                        <label class="form-check-label" for="validationFormCheck10">INDONESIA</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck11" value="option11" required>
+                                        <label class="form-check-label" for="validationFormCheck11">CINA</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck12" value="option12" required>
+                                        <label class="form-check-label" for="validationFormCheck12">SINGAPORE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck13" value="option13" required>
+                                        <label class="form-check-label" for="validationFormCheck13">COREA DEL SUD</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck13" value="option13" required>
+                                        <label class="form-check-label" for="validationFormCheck13">STATI UNITI</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck14" value="option14" required>
+                                        <label class="form-check-label" for="validationFormCheck14">CANADA</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck15" value="option15" required>
+                                        <label class="form-check-label" for="validationFormCheck15">BRASILE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck16" value="option16" required>
+                                        <label class="form-check-label" for="validationFormCheck16">MESSICO</label>
+                                    </div>
+                                    <div class="form-check form-check-inline" style="margin-top: 15px;">
+                                        <input class="form-check-input" type="radio" name="radio-stacked"
+                                            id="validationFormCheck17" value="option17" required>
+                                        <label class="form-check-label" for="validationFormCheck17">ARGENTINA</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Continua</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                <button type="submit" value="Submit" class="btn btn-primary"
+                                    data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Continua</button>
                             </div>
                         </div>
                     </div>
@@ -230,15 +272,15 @@
             <div class="col col-lg-auto">
                 <div class="modbutton">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Tipologia</button>
+                        data-bs-target="#exampleModalToggle2">Tipologia</button>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Partenze</h1>
+                                <h1 class="modal-title text-center w-100" id="exampleModalToggleLabel2">Partenze</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -246,56 +288,59 @@
                                 <div class="modalform">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                            id="inlineRadio1" value="option1" required>
                                         <label class="form-check-label" for="inlineRadio1">BERGAMO (BGY)</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                            id="inlineRadio2" value="option2" required>
                                         <label class="form-check-label" for="inlineRadio2">CATANIA (CTA)</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
+                                            id="inlineRadio3" value="option3" required>
                                         <label class="form-check-label" for="inlineRadio3">ROMA FIUMICINO
                                             (FCO)</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
+                                            id="inlineRadio3" value="option3" required>
                                         <label class="form-check-label" for="inlineRadio4">MILANO MALPENSA (MXP)
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
+                                            id="inlineRadio3" value="option3" required>
                                         <label class="form-check-label" for="inlineRadio5">NAPOLI (NAP)</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio6" value="option6">
+                                            id="inlineRadio6" value="option6" required>
                                         <label class="form-check-label" for="inlineRadio6">VERONA (VRN)</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio7" value="option7">
+                                            id="inlineRadio7" value="option7" required>
                                         <label class="form-check-label" for="inlineRadio7">CAGLIARI (CA)</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio8" value="option8">
+                                            id="inlineRadio8" value="option8" required>
                                         <label class="form-check-label" for="inlineRadio8">PISA (PSA)</label>
                                     </div>
                                     <div class="form-check form-check-inline" style="margin-top: 15px;">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio9" value="option9">
+                                            id="inlineRadio9" value="option9" required>
                                         <label class="form-check-label" for="inlineRadio9">PALERMO (PMO)</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Continua</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                    data-bs-toggle="modal">Indietro</button>
+                                <button class="btn btn-primary" type="submit" value="Submit"
+                                    data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Continua</button>
                             </div>
                         </div>
                     </div>
@@ -304,16 +349,17 @@
             <div class="col col-lg-auto">
                 <div class="modbutton2">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2">
+                        data-bs-target="#exampleModalToggle3">
                         Ospiti
                     </button>
                 </div>
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModalToggle3" aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Quanti siete?</h1>
+                                <h1 class="modal-title text-center w-100" id="exampleModalToggleLabel3">Quanti siete?
+                                </h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -321,21 +367,24 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Adulti:</label>
-                                        <input type="number" class="form-control" id="recipient-number">
+                                        <input type="number" class="form-control" id="recipient-number" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Bambini:</label>
-                                        <input type="number" class="form-control" id="recipient-number">
+                                        <input type="number" class="form-control" id="recipient-number" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Camere:</label>
-                                        <input type="number" class="form-control" id="recipient-number">
+                                        <input type="number" class="form-control" id="recipient-number" required>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Continua</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                    data-bs-toggle="modal">Indietro</button>
+                                <button type="submit" value="Submit" class="btn btn-primary"
+                                    data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Continua</button>
                             </div>
                         </div>
                     </div>
@@ -344,16 +393,17 @@
             <div class="col col-lg-auto">
                 <div class="modbutton3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal3">
+                        data-bs-target="#exampleModalToggle4">
                         Periodo
                     </button>
                 </div>
-                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModalToggle4" aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title text-center w-100" id="exampleModalLabel">Qando Parti?</h1>
+                                <h1 class="modal-title text-center w-100" id="exampleModalToggleLabel4">Qando Parti?
+                                </h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -370,8 +420,10 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Continua</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                    data-bs-toggle="modal">Indietro</button>
+                                <button type="submit" value="Submit" class="btn btn-primary">Cerca</button>
                             </div>
                         </div>
                     </div>
@@ -379,7 +431,6 @@
             </div>
         </div>
     </div>
-
     <br>
     <br>
     <h1 style="text-align: center;">Scopri le Nostre Migliori Offerte</h1>
