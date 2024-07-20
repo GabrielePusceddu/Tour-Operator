@@ -974,8 +974,6 @@
 
             //modifica pagina
             document.addEventListener('DOMContentLoaded', function() {
-                //OPERAZIONI READ
-
                 //seleziono tutti gli elementi da modificare in DASHBOARD
                 const venditeAnno = document.getElementById('vendite_anno');
                 const differenzaAnno = document.getElementById('diff_anno');
@@ -1018,12 +1016,41 @@
                                     <td>${destinazione.nome}</td>
                                 `;
                                 row.innerHTML+=`
-                                    <td class="numAlloggi ${destinazione.nome}"><b>WIP</b></td>
-                                    <td class="numPrenotazioni ${destinazione.nome}"><b>WIP</b></td>
-                                    <td class="operazioni-de">
-                                        <button type="button" class="btn operazioni" onclick="editDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                        <button type="button" class="btn operazioni" onclick="deleteDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                    <td><b>WIP</b></td>
+                                    <td><b>WIP</b></td>
+                                    <td>
+                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#modalEdit${destinazione.nome}"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${destinazione.id}, '${destinazione.nome}', 'destinazioni')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
                                     </td>
+                                    
+                                    <!--MODAL PER MODIFICARE LA DESTINAZIONE-->
+                                    <div class="modal fade" id="modalEdit${destinazione.nome}" tabindex="-1" aria-labelledby="ModalTitle${destinazione.nome}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="ModalTitle${destinazione.nome}">Modifica ${destinazione.nome}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="edit${destinazione.nome}" name="newDestinazione" method="put">
+                                                        <div class="form-floating mb-3 hidden">
+                                                            <input type="text" class="form-control" id="floatingNomeNuovaDestinazione" placeholder="name">
+                                                            <label for="floatingNomeNuovaDestinazione">${destinazione.id}</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="floatingNomeNuovaDestinazione" placeholder="name">
+                                                            <label for="floatingNomeNuovaDestinazione">Nome della destinazione</label>
+                                                        </div>
+                                                        <input type="submit" class="btn operazioni" onclick="editDestinazione(${destinazione.id}, "edit${destinazione.nome}")" value="AGGIORNA">
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 `;
                                 //inserisco la riga nel documento
                                 tabellaDestinazioni.appendChild(row);
@@ -1050,6 +1077,7 @@
                 function fetchAlloggi() {
                     //seleziono gli elementi da modificare in ALLOGGI
                     const tabellaAlloggi = document.getElementById('tbody-alloggi');
+                    tabellaAlloggi.innerHTML = '';
                     //costruisco la tabella degli ALLOGGI
                     fetch('http://localhost:8080/alloggi')
                         .then(res => res.json())
@@ -1065,8 +1093,8 @@
                                     <td>${alloggio.prezzo}€</td>
                                     <td>${alloggio.stelle} stelle</td>
                                     <td class="operazioni-de">
-                                        <button type="button" class="btn operazioni" onclick="editAlloggio(${alloggio.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                        <button type="button" class="btn operazioni" onclick="deleteAlloggio(${alloggio.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="modalEdit(${alloggio.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${alloggio.id}, '${alloggio.descrizione}', 'alloggi')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
                                     </td>
                                 `;
                                 //inserisco la riga nella tabella
@@ -1100,7 +1128,7 @@
                                     <td>${nascitaUtente}</td>
                                     <td class="operazioni-de">
                                         <button type="button" class="btn operazioni" onclick="editUtente(${utente.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                        <button type="button" class="btn operazioni" onclick="deleteUtente(${utente.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${utente.id}, '${utente.nome}', 'utenti')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
                                     </td>
                                 `;
                                 //inserisco la riga nella tabella
@@ -1113,6 +1141,7 @@
                 function fetchPrenotazioni() {
                     //seleziono gli oggetti da modificare in PRENOTAZIONI
                     const tabellaPrenotazioni = document.getElementById('tbody-prenotazioni');
+                    tabellaPrenotazioni.innerHTML = '';
                     //costruisco la tabella PRENOTAZIONI
                     fetch('http://localhost:8080/preventivo')
                         .then(res => res.json())
@@ -1139,7 +1168,7 @@
                                     <td>${sconto}%</td>
                                     <td class="operazioni-de">
                                         <button type="button" class="btn operazioni" onclick="editPrenotazione(${prenotazione.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                        <button type="button" class="btn operazioni" onclick="deletePrenotazione(${prenotazione.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${prenotazione.id}, '${prenotazione.email}', 'preventivo')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
                                     </td>
                                 `;
                                 tabellaPrenotazioni.appendChild(row);
@@ -1251,12 +1280,33 @@
                     })
                 })
 
+                //OFFERTE
+
+                //OPERAZIONI DELETE
+                window.deleteElemento = function (id, nome, tipo) {
+                    console.log('ok');
+                    const risposta = prompt("Sicuro di voler eliminare "+nome+"? Digita "+nome+" per confermare.");
+                    if (risposta==nome) {
+                        fetch(`http://localhost:8080/${tipo}/${id}`, {
+                            method: 'DELETE'
+                        }).then(() => {
+                            fetchDestinazioni();
+                            fetchAlloggi();
+                            fetchPrenotazioni();
+                            fetchUtenti();
+                        })
+                    } else {
+                        alert('Inserimento sbagliato, eliminazione annullata.')
+                    }
+                }
+
                 //richiamo le funzioni fetch per mostrare i dati preesistenti al caricamento della pagina
                 fetchDestinazioni();
                 fetchAlloggi();
                 fetchPrenotazioni();
                 fetchUtenti();
             })
+
         </script>
     </body>
 </html>
