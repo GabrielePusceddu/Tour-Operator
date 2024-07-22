@@ -927,6 +927,26 @@
                 }
             }
 
+            async function controllo() {
+                const token = localStorage.getItem('authToken');
+
+                try {
+                    const response = await fetch('http://localhost:8080/utenti/admin', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `${token}`
+                        }
+                    })
+                    if(response.status==200) {
+                        alert('Benvenuto amministratore!');
+                    } else {
+                        alert("Utente non autorizzato. Fai prima l'accesso");
+                        window.location.href="./accedi.html";
+                    }
+                } catch (error) {
+                    console.log('errore');
+                }
+            }
             //modifica pagina
             document.addEventListener('DOMContentLoaded', function() {
                 //seleziono tutti gli elementi da modificare in DASHBOARD
@@ -1241,6 +1261,7 @@
                         email: emailUtente.value,
                         password: passwordUtente.value,
                         confermaPassword: confermaUtente.value,
+                        ruolo: 'USER',
                         nascita: nascitaUtente,
                         privacyLetta: privacyUtente.checked
                     };
@@ -1420,6 +1441,7 @@
                 }
 
                 //richiamo le funzioni fetch per mostrare i dati preesistenti al caricamento della pagina
+                controllo();
                 fetchDestinazioni();
                 fetchAlloggi();
                 fetchPrenotazioni();

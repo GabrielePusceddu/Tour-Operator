@@ -169,7 +169,7 @@
             </div> <!--FINE RIGA-->
             <div class="row text-center"> <!--FORM-->
                 <label class="hidden pb-1" id="errore"><ins>CAMPO MANCANTE!</ins></label>
-                <form id="accedi" name="form1" action="">
+                <form id="accedi" name="form1" action="" onsubmit="login(event)">
                     <div class="form-floating mx-2 mb-2">
                         <input type="email" class="form-control" name="email" id="email_utente" onclick="resetta()" placeholder="email@example.com">
                         <label for="email_utente">Indirizzo Email</label>
@@ -185,7 +185,7 @@
                             <p class="text-end mt-1" style="color: grey; font-size: x-small;"><a href="#">Password dimenticata?</a></p>
                         </div>
                     </div> <!--FINE DIV-->
-                    <button type="button" class="btn invio" style="background-color: #EF7365; color:#F4F4F4" onclick="validazione()">ACCEDI</button>
+                    <input type="submit" class="btn invio" style="background-color: #EF7365; color:#F4F4F4" value="ACCEDI">
                 </form>
             </div>
         </div> <!--FINE ACCEDI-->
@@ -204,7 +204,7 @@
         <!--JS-->
         <script>
             const errore = document.getElementById('errore');
-            function validazione() {
+            /*function validazione() {
                 const mAccesso = document.getElementById("email_utente");
                 const pAccesso = document.getElementById("pw_accesso");
                 let incompleto = false;
@@ -221,7 +221,7 @@
                         errore.classList.remove('hidden');
                     }
                 }
-            };
+            };*/
             function resetta() {
                 const mancanti = document.getElementsByClassName("mancante");
                 for (let dato of mancanti) {
@@ -244,6 +244,90 @@
                 for (let img of icona) {
                     img.classList.toggle('hidden');
                 }
+            }
+            
+            async function login(event) {
+                event.preventDefault();
+                const email = document.getElementById('email_utente');
+                const password = document.getElementById('pw_accesso');
+                let incompleto = false;
+                if (email.value=="") {
+                    email.classList.add("mancante");
+                    incompleto=true;
+                };
+                if (password.value=="") {
+                    password.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (incompleto) {
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                }
+                const richiesta = {
+                    email: email.value,
+                    password: password.value
+                }
+                
+                try {
+                    const response = await fetch('http://localhost:8080/auth/login', {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(richiesta)
+                    });
+
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        const token = data.token;
+                        localStorage.setItem('authToken', token);
+                        username = email.value;
+                        redirect(username);
+                    } else {
+                        console.log('login 1 errore');
+                        //error
+                    }
+                } catch (error) {
+                    console.log('login 2 errore');
+                    //messaggio di errore
+                }
+            };
+
+            async function logout(event) {
+                event.preventDefault();
+                const token = localStorage('authToken');
+
+                try {
+                    const response = await fetch('http://localhost:8080/auth/logout', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `${token}`
+                        }
+                    });
+
+                    if(response.status === 200) {
+                        localStorage.removeItem('authToken');
+                        console.log('logout ok')
+                    } else {
+                        console.log('logout 1 errore');
+                    }
+                }catch(erorr) {
+                    console.log('logout 2 errore');
+                }
+            };
+            
+            function redirect(email) {
+                fetch(`http://localhost:8080/utenti/searchByEmail?email=${email}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.ruolo=='USER') {
+                            console.log('ok USER')
+                            window.location.href='./PaginaPersonale.html';
+                        } else if (data.ruolo=='ADMIN') {
+                            window.location.href='./admin.html';
+                        }
+                    })
             }
         </script>
     </body>
