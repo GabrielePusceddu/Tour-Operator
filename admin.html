@@ -252,7 +252,7 @@
                             <!--UTENTE E OFFERTA-->
                             <div class="row m-1 d-flex justify-content-around">
                                 <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newUtenteModal" onclick="editModalUtenti(0, '')">NUOVO UTENTE</button>
-                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newOffertaModal">NUOVA OFFERTA</button>
+                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newOffertaModal" onclick="editModalOfferte(0, '')">NUOVA OFFERTA</button>
                             </div>
                         </div>
                     </div>
@@ -391,57 +391,14 @@
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Destinazione</th>
-                        <th scope="col">Tipo</th>
+                        <th scope="col">Prezzo</th>
                         <th scope="col">Sconto</th>
-                        <th scope="col">Prenotazioni</th>
+                        <th scope="col">Stelle</th>
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
                 <tbody id="tbody-offerte">
-                    <tr>
-                        <td class="nome-of">Pacchetto Caraibi</td>
-                        <td class="destinazione-of">Caraibi</td>
-                        <td class="tipo-of">Internazionale</td>
-                        <td class="sconto-of">30%</td>
-                        <td class="nPrenotazioni-of">2</td>
-                        <td class="operazioni-of">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-of">Pacchetto Alpi</td>
-                        <td class="destinazione-of">Trento</td>
-                        <td class="tipo-of">Italiano</td>
-                        <td class="sconto-of">20%</td>
-                        <td class="nPrenotazioni-of">6</td>
-                        <td class="operazioni-of">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-of">Pacchetto Giappo-tour</td>
-                        <td class="destinazione-of">Giappone</td>
-                        <td class="tipo-of">Internazionale</td>
-                        <td class="sconto-of">60%</td>
-                        <td class="nPrenotazioni-of">1</td>
-                        <td class="operazioni-of">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-of">Pacchetto Vini della Bretagna</td>
-                        <td class="destinazione-of">Francia</td>
-                        <td class="tipo-of">Europeo</td>
-                        <td class="sconto-of">25%</td>
-                        <td class="nPrenotazioni-of">3</td>
-                        <td class="operazioni-of">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
+                    <!--PARTE DINAMICA-->
                 </tbody>
             </table>
         </div>
@@ -531,7 +488,7 @@
                             <label for="floatingNomeNuovaDestinazione">Nome della destinazione</label>
                         </div>
                         <input type="submit" id="inviaDestinazione" class="btn operazioni" value="AGGIUNGI">
-                        <button id="modificaDestinazione" class="btn operazioni hidden" onclick="editDestinazione()">MODIFICA</button>
+                        <button id="modificaDestinazione" class="btn operazioni hidden">MODIFICA</button>
                     </form>
                 </div>
                     <div class="modal-footer">
@@ -579,7 +536,7 @@
                             </div>
                         </div>
                         <input type="submit" id="inviaAlloggio" class="btn operazioni" value="AGGIUNGI">
-                        <button class="btn operazioni hidden" id="modificaAlloggio" onclick="editAlloggi()">MODIFICA</button>
+                        <button class="btn operazioni hidden" id="modificaAlloggio">MODIFICA</button>
                     </form>
                 </div>
                     <div class="modal-footer">
@@ -771,7 +728,7 @@
                             </div>
                         </div>
                         <input type="submit" id="inviaUtente" class="btn operazioni" value="AGGIUNGI">
-                        <button class="btn operazioni hidden" id="modificaUtente" onclick="editUtente()">MODIFICA</button>
+                        <button class="btn operazioni hidden" id="modificaUtente">MODIFICA</button>
                     </form>
                 </div>
                     <div class="modal-footer">
@@ -785,31 +742,22 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="DestinazioniModalLabel">NUOVA OFFERTA</h1>
+                        <h1 class="modal-title fs-5" id="OfferteModalLabel">NUOVA OFFERTA</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 <div class="modal-body">
-                    <h6>Aggiungi i dati della nuova offerta</h6>
+                    <h6>Inserisci i dati dell'offerta</h6>
                     <form id="newOfferta" name="newOfferta" method="post">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingNomeNuovaOfferta" placeholder="name">
-                            <label for="floatingNomeNuovaOfferta">Nome della destinazione</label>
-                        </div>
-                        <select id="selectDestinazioniOff" class="form-select my-2" aria-label="Default select">
-                            <option selected>Scegli la destinazione</option>
+                        <select id="selectAlloggioOff" class="form-select my-2" aria-label="Default select">
+                            <option selected>Scegli l'alloggio a cui applicare lo sconto</option>
                             <!--parte dinamica-->
                         </select>
-                        <div class="row ps-2 my-2">
-                            <div class="col-6 p-1 form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingPrezzoNuovaOfferta" placeholder="name">
-                                <label for="floatingPrezzoNuovaOfferta">Prezzo</label>
-                            </div>
-                            <div class="col-6 p-1 form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingScontoNuovaOfferta" placeholder="name">
-                                <label for="floatingScontoNuovaOfferta">Sconto</label>
-                            </div>
+                        <div class="p-1 form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingScontoNuovaOfferta" placeholder="name">
+                            <label for="floatingScontoNuovaOfferta">Sconto</label>
                         </div>
-                        <input type="submit" class="btn operazioni" value="AGGIUNGI">
+                        <input type="submit" class="btn operazioni" id="inviaOfferta" value="AGGIUNGI">
+                        <button class="btn operazioni hidden" id="modificaOfferta">MODIFICA</button>
                     </form>
                 </div>
                     <div class="modal-footer">
@@ -1005,11 +953,10 @@
                     //seleziono tutti gli elementi da modificare in DESTINAZIONI
                     const tabellaDestinazioni = document.getElementById('tbody-destinazioni');
                     const selectDestinazioni = document.getElementById('selectDestinazioni');
-                    const selectDestinazioniOfferta = document.getElementById('selectDestinazioniOff')
+                    //const selectDestinazioniOfferta = document.getElementById('selectDestinazioniOff')
                     //cancello ciò che era scritto prima
                     tabellaDestinazioni.innerHTML = '';
                     selectDestinazioni.innerHTML = '<option selected>Scegli la destinazione</option>';
-                    selectDestinazioniOfferta.innerHTML = '<option selected>Scegli la destinazione</option>';
                     //costruisco la tabella delle DESTINAZIONI
                     fetch('http://localhost:8080/destinazioni')
                         .then(res => res.json())
@@ -1036,17 +983,11 @@
                                 //contaPrenotazioni(destinazione.nome, destinazione.id);
                                 //modifico i select per nuovi alloggi e offerte
                                 const opzione = document.createElement('option');
-                                const opzione2 = document.createElement('option');
                                 opzione.setAttribute('value', destinazione.id);
-                                opzione2.setAttribute('value', destinazione.id);
                                 opzione.innerHTML = `
                                     ${destinazione.nome}
                                 `;
-                                opzione2.innerHTML = `
-                                    ${destinazione.nome}
-                                `;
                                 selectDestinazioni.appendChild(opzione);
-                                selectDestinazioniOfferta.appendChild(opzione2);
                             })
                         })
                 }
@@ -1055,7 +996,9 @@
                 function fetchAlloggi() {
                     //seleziono gli elementi da modificare in ALLOGGI
                     const tabellaAlloggi = document.getElementById('tbody-alloggi');
-                    tabellaAlloggi.innerHTML = '';
+                    const selectAlloggi = document.getElementById('selectAlloggioOff')
+                    tabellaAlloggi.innerHTML = "";
+                    selectAlloggi.innerHTML = "<option selected>Scegli l'alloggio a cui applicare lo sconto</option>";
                     //costruisco la tabella degli ALLOGGI
                     fetch('http://localhost:8080/alloggi')
                         .then(res => res.json())
@@ -1066,17 +1009,24 @@
                                 const row = document.createElement('tr');
                                 //riempio la riga con i dati dell'alloggio
                                 row.innerHTML = `
-                                    <td>${alloggio.descrizione}</td>
+                                    <td>${alloggio.nome}</td>
                                     <td>${alloggio.destinazione.nome}</td>
                                     <td>${alloggio.prezzo}€</td>
                                     <td>${alloggio.stelle} stelle</td>
                                     <td class="operazioni-de">
-                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newAlloggioModal" onclick="editModalAlloggi(${alloggio.id}, '${alloggio.descrizione}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${alloggio.id}, '${alloggio.descrizione}', 'alloggi')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newAlloggioModal" onclick="editModalAlloggi(${alloggio.id}, '${alloggio.nome}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${alloggio.id}, '${alloggio.nome}', 'alloggi')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
                                     </td>
                                 `;
                                 //inserisco la riga nella tabella
                                 tabellaAlloggi.appendChild(row);
+                                //creo l'opzione del select dedicata a questo alloggio
+                                const opzione = document.createElement('option');
+                                opzione.setAttribute('value', alloggio.id);
+                                opzione.innerHTML = `
+                                    ${alloggio.nome}
+                                `;
+                                selectAlloggi.appendChild(opzione);
                             })
                         })
                 }
@@ -1155,10 +1105,39 @@
                 }
                 
                 //OFFERTE
-                //seleziono gli oggetti da modificare in OFFERTE
-                const tabellaOfferte = document.getElementById('tbody-offerte');
-                //costruisco la tabella OFFERTE
-                //fetch(...) => ...
+                function fetchOfferte() {
+                    //seleziono gli elementi da modificare in OFFERTE
+                    const tabellaOfferte = document.getElementById('tbody-offerte');
+                    tabellaOfferte.innerHTML = '';
+                    //costruisco la tabella delle offerte partendo da quella di alloggi
+                    fetch('http://localhost:8080/alloggi')
+                        .then(res => res.json())
+                        .then(data => {
+                            //considero ciascun alloggio ricevuto dal DB
+                            data.forEach(alloggio => {
+                                //controllo se l'alloggio prevede uno sconto
+                                if(alloggio.sconto>0) {
+                                    //l'alloggio ha uno sconto, quindi è un'offertay
+                                    //costruisco la riga della singola offerta
+                                    const row = document.createElement('tr');
+                                    //riempio la riga con i dati dell'offerta
+                                    row.innerHTML = `
+                                        <td>${alloggio.nome}</td>
+                                        <td>${alloggio.destinazione.nome}</td>
+                                        <td>${alloggio.prezzo}€</td>
+                                        <td>${alloggio.sconto}%</td>
+                                        <td>${alloggio.stelle} stelle</td>
+                                        <td class="operazioni-de">
+                                            <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newOffertaModal" onclick="editModalOfferte(${alloggio.id}, '${alloggio.nome}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                            <button type="button" class="btn operazioni" onclick="deleteOfferta(${alloggio.id}, '${alloggio.nome}')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                        </td>
+                                    `;
+                                    //inserisco la riga nella tabella
+                                    tabellaOfferte.appendChild(row);
+                                }
+                            })
+                        })
+                }
                 
                 //MESSAGGI E RECENSIONI
                 //seleziono gli oggetti da modificare in MESSAGGI E RECENSIONI
@@ -1213,8 +1192,10 @@
                     const prezzoAlloggio = document.getElementById('floatingPrezzoNuovoAlloggio');
                     const stelleAlloggio = document.getElementById('selectStelle');
                     const alloggio = {
-                        descrizione: nomeAlloggio.value, //sostituire descrizione con nome
+                        nome: nomeAlloggio.value,
                         prezzo: prezzoAlloggio.value,
+                        descrizione: '',
+                        sconto: 0,
                         destinazione: {
                             id: destinazioneAlloggio.value
                         },
@@ -1276,11 +1257,33 @@
                     })
                 })
 
-                //OFFERTE
+                //OFFERTE (PUT IN CUI MODIFICO LO SCONTO DELL'ALLOGGIO)
+                const formNewOfferta = document.getElementById('newOfferta');
+                formNewOfferta.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const id = document.getElementById('selectAlloggioOff').value;
+                    const url = `http://localhost:8080/alloggi/${id}/sconto`;
+                    const method = 'PUT';
+                    const sconto = document.getElementById('floatingScontoNuovaOfferta');
+                    const offerta = {
+                        sconto: sconto.value
+                    }
+
+                    fetch(url, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(offerta)
+                    }).then(() => {
+                        fetchOfferte();
+                        formNewOfferta.reset();
+                    });
+
+                })
 
                 //OPERAZIONI DELETE
                 window.deleteElemento = function (id, nome, tipo) {
-                    console.log('ok');
                     const risposta = prompt("Sicuro di voler eliminare "+nome+"? Digita "+nome+" per confermare.");
                     if (risposta==nome) {
                         fetch(`http://localhost:8080/${tipo}/${id}`, {
@@ -1290,9 +1293,31 @@
                             fetchAlloggi();
                             fetchPrenotazioni();
                             fetchUtenti();
+                            fetchOfferte();
                         })
                     } else {
                         alert('Inserimento sbagliato, eliminazione annullata.')
+                    }
+                }
+
+                //DELETE OFFERTA (PUT IN CUI SCONTO ALLOGGIO = 0)
+                window.deleteOfferta = function (id, nome) {
+                    const risposta = prompt("Sei sicuro di voler cancellare questa offerta? Digita "+nome+" per confermare.");
+                    const alloggio = {
+                        sconto: 0
+                    };
+                    if (risposta==nome) {
+                        fetch(`http://localhost:8080/alloggi/${id}/sconto`, {
+                            method: 'PUT',
+                            headers: {
+                            'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(alloggio)
+                        }).then(() => {
+                            fetchOfferte();
+                        })
+                    } else {
+                        alert("Cancellazione annullata");
                     }
                 }
 
@@ -1376,11 +1401,30 @@
                     }
                 }
 
+                //OFFERTE
+                window.editModalOfferte = function (id, nome) {
+                    if(id==0) {
+                        //mostro il form per aggiungere una nuova offerta
+                        document.getElementById('inviaOfferta').classList.remove('hidden');
+                        document.getElementById('modificaOfferta').classList.add('hidden');
+                        document.getElementById('selectAlloggioOff').classList.remove('hidden');
+                        document.getElementById('OfferteModalLabel').innerText = 'NUOVA OFFERTA';
+                    } else {
+                        //mostro il form per modificare un'offerta esistente
+                        document.getElementById('inviaOfferta').classList.add('hidden');
+                        document.getElementById('modificaOfferta').classList.remove('hidden');
+                        document.getElementById('selectAlloggioOff').classList.add('hidden');
+                        document.getElementById('selectAlloggioOff').value = id;
+                        document.getElementById('OfferteModalLabel').innerText = "Modifica l'offerta: "+nome;
+                    }
+                }
+
                 //richiamo le funzioni fetch per mostrare i dati preesistenti al caricamento della pagina
                 fetchDestinazioni();
                 fetchAlloggi();
                 fetchPrenotazioni();
                 fetchUtenti();
+                fetchOfferte();
             })
 
         </script>
