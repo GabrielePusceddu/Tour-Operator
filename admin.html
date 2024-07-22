@@ -201,6 +201,9 @@
                 <li class="nav-item"> 
                     <a class="nav-link nav-admin" href="#utenti" onclick="schermata('utenti', this)">Utenti</a>
                 </li>
+                <li class="nav-item"> 
+                    <a class="nav-link nav-admin" href="#prenotazioni" onclick="schermata('prenotazioni', this)">Prenotazioni</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link nav-admin" href="#offerte" onclick="schermata('offerte', this)">Offerte</a>
                 </li>
@@ -241,8 +244,16 @@
                     <div class="card amministrazione_card rounded shadow border-end-0 border-top-0 border-bottom-0 h-100" style="border-color: #127d02;">
                         <div class="card-body h-100">
                             <h5 class="card-title mt-2 mb-4">Aggiungi</h5>
-                            <!--Possibilità di aggiungere nuove destinazioni, utenti, offerte o alloggi-->
-                            <h1 class="my-4"><strong><ins>WIP</ins></strong></h1>
+                            <!--DESTINAZIONE E ALLOGGIO-->
+                            <div class="row m-1 d-flex justify-content-around">
+                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newDestinazioneModal" onclick="editModalDestinazione(0, '')">NUOVA DESTINAZIONE</button>
+                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newAlloggioModal" onclick="editModalAlloggi(0, '')">NUOVO ALLOGGIO</button>
+                            </div>
+                            <!--UTENTE E OFFERTA-->
+                            <div class="row m-1 d-flex justify-content-around">
+                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newUtenteModal" onclick="editModalUtenti(0, '')">NUOVO UTENTE</button>
+                                <button type="button" class="m-2 col-5 btn operazioni" data-bs-toggle="modal" data-bs-target="#newOffertaModal">NUOVA OFFERTA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,98 +324,13 @@
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Destinazione</th>
-                        <th scope="col">N° Prenotazioni</th> <!--TOGLIERE-->
                         <th scope="col">Prezzo</th>
-                        <th scope="col">Tipo</th> <!--TOGLIERE-->
                         <th scope="col">Stelle</th>
                         <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
                 <tbody id="tbody-alloggi">
-                    <tr>
-                        <td class="nome-al">Hotel Hassler Roma</td>
-                        <td class="destinazione-al">Roma</td>
-                        <td class="nPrenotazioni-al">2</td>
-                        <td class="prezzo-al">120</td>
-                        <td class="tipo-al">Italiano</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Hotel Artemide</td>
-                        <td class="destinazione-al">Roma</td>
-                        <td class="nPrenotazioni-al">4</td>
-                        <td class="prezzo-al">120</td>
-                        <td class="tipo-al">Italiano</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Hotel Augustus</td>
-                        <td class="destinazione-al">Roma</td>
-                        <td class="nPrenotazioni-al">5</td>
-                        <td class="prezzo-al">140</td>
-                        <td class="tipo-al">Italiano</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Hotel Serenissima</td>
-                        <td class="destinazione-al">Palermo</td>
-                        <td class="nPrenotazioni-al">3</td>
-                        <td class="prezzo-al">120</td>
-                        <td class="tipo-al">Italiano</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Hotel Bellavista</td>
-                        <td class="destinazione-al">Palermo</td>
-                        <td class="nPrenotazioni-al">4</td>
-                        <td class="prezzo-al">140</td>
-                        <td class="tipo-al">Italiano</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Montmartre Residence</td>
-                        <td class="destinazione-al">Parigi</td>
-                        <td class="nPrenotazioni-al">0</td>
-                        <td class="prezzo-al">200</td>
-                        <td class="tipo-al">Europeo</td>
-                        <td class="stelle">4 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-al">Soho Asakusa</td>
-                        <td class="destinazione-al">Tokyo</td>
-                        <td class="nPrenotazioni-al">3</td>
-                        <td class="prezzo-al">50</td>
-                        <td class="tipo-al">Internazionale</td>
-                        <td class="stelle">3 stelle</td>
-                        <td class="operazioni-al">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
+                    <!--PARTE DINAMICA-->
                 </tbody>
             </table>
         </div>
@@ -426,116 +352,31 @@
                     </tr>
                 </thead>
                 <tbody id="tbody-utenti">
+                    <!--PARTE DINAMICA-->
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid hidden shadow amministrazione text-center pb-2 text-center" id="prenotazioni"> <!--PRENOTAZIONI-->
+            <div class="row pt-4"> <!--TITOLO-->
+                <div class="col">
+                    <h1>Prenotazioni</h1>
+                </div>
+            </div>
+            <table class="table my-3 mx-2 px-5"> <!--TABELLA-->
+                <thead>
                     <tr>
-                        <td class="nome-ut">Mario</td>
-                        <td class="cognome-ut class">Rossi</td>
-                        <td class="email-ut">mariorossi@email.com</td>
-                        <td class="password-ut">Password.1</td>
-                        <td class="nascita-ut class">20-01-1967</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
+                        <th scope="col">Utente</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Destinazione</th>
+                        <th scope="col">Viaggiatori</th>
+                        <th scope="col">Giorni</th>
+                        <th scope="col">Prezzo</th>
+                        <th scope="col">Sconto</th>
+                        <th scope="col">Operazioni</th>
                     </tr>
-                    <tr>
-                        <td class="nome-ut">Giovanni</td>
-                        <td class="cognome-ut class">Verdi</td>
-                        <td class="email-ut">gverdi@email.com</td>
-                        <td class="password-ut">Passw0rd.01</td>
-                        <td class="nascita-ut class">31-05-1983</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Francesca</td>
-                        <td class="cognome-ut class">Bianchi</td>
-                        <td class="email-ut">francescawhite@email.com</td>
-                        <td class="password-ut">Pa55word.001</td>
-                        <td class="nascita-ut class">14-07-1995</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Giuseppe</td>
-                        <td class="cognome-ut class">Marroni</td>
-                        <td class="email-ut">g.brown@email.com</td>
-                        <td class="password-ut">PasswordSegreta.5</td>
-                        <td class="nascita-ut class">12-07-2001</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Federico</td>
-                        <td class="cognome-ut class">Rossi</td>
-                        <td class="email-ut">rossifederico@email.com</td>
-                        <td class="password-ut">Pass.word.Rossi</td>
-                        <td class="nascita-ut class">15-11-1973</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Chiara</td>
-                        <td class="cognome-ut class">Scuri</td>
-                        <td class="email-ut">chiaroscuro@email.com</td>
-                        <td class="password-ut">Passw0rd.5egreta</td>
-                        <td class="nascita-ut class">23-06-1996</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Davide</td>
-                        <td class="cognome-ut class">Ferrari</td>
-                        <td class="email-ut">ferraridavid@email.com</td>
-                        <td class="password-ut">Password.5</td>
-                        <td class="nascita-ut class">01-10-2007</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Massimo</td>
-                        <td class="cognome-ut class">Gallo</td>
-                        <td class="email-ut">thechicken@email.com</td>
-                        <td class="password-ut">Password.12331</td>
-                        <td class="nascita-ut class">25-11-1982</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Giordano</td>
-                        <td class="cognome-ut class">Bruno</td>
-                        <td class="email-ut">brunogiordano@email.com</td>
-                        <td class="password-ut">Eliocentrismo.1600</td>
-                        <td class="nascita-ut class">17-02-1962</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="nome-ut">Giovanna</td>
-                        <td class="cognome-ut class">Mancini</td>
-                        <td class="email-ut">giovannaleft@email.com</td>
-                        <td class="password-ut">Pass.w0rd.56953</td>
-                        <td class="nascita-ut class">13-04-1993</td>
-                        <td class="operazioni-ut">
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                            <button type="button" class="btn btn-primary"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                        </td>
-                    </tr>
+                </thead>
+                <tbody id="tbody-prenotazioni">
+                    <!--PARTE DINAMICA-->
                 </tbody>
             </table>
         </div>
@@ -673,6 +514,311 @@
                 </tbody>
             </table>
         </div>
+        <!--MODAL PER AGGIUNGERE UNA DESTINAZIONE-->
+        <div class="modal fade" id="newDestinazioneModal" tabindex="-1" aria-labelledby="DestinazioniModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="DestinazioniModalLabel">NUOVA DESTINAZIONE</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <h6>Aggiungi i dati della destinazione</h6>
+                    <form id="newDestinazione" name="newDestinazione" method="post">
+                        <input type="text" class="hidden" id="idDestinazione">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingNomeNuovaDestinazione" placeholder="name">
+                            <label for="floatingNomeNuovaDestinazione">Nome della destinazione</label>
+                        </div>
+                        <input type="submit" id="inviaDestinazione" class="btn operazioni" value="AGGIUNGI">
+                        <button id="modificaDestinazione" class="btn operazioni hidden" onclick="editDestinazione()">MODIFICA</button>
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MODAL PER AGGIUNGERE UN ALLOGGIO-->
+        <div class="modal fade" id="newAlloggioModal" tabindex="-1" aria-labelledby="AlloggiModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="AlloggiModalLabel">NUOVO ALLOGGIO</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <h6>Aggiungi i dati dell'alloggio</h6>
+                    <form id="newAlloggio" name="newAlloggio" method="post">
+                        <input type="text" class="hidden" id="idAlloggio">
+                        <!--nome-->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingNomeNuovoAlloggio" placeholder="name">
+                            <label for="floatingNomeNuovoAlloggio">Nome dell'alloggio</label>
+                        </div>
+                        <!--destinazione-->
+                        <select id="selectDestinazioni" class="form-select my-2" aria-label="Default select">
+                            <option selected>Scegli la destinazione</option>
+                            <!--parte dinamica-->
+                        </select>
+                        <div class="row ps-2 my-2">
+                            <div class="col-6 p-1 form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingPrezzoNuovoAlloggio" placeholder="name">
+                                <label for="floatingPrezzoNuovoAlloggio">Prezzo</label>
+                            </div>
+                            <div class="col-6">
+                                <select id="selectStelle" class="form-select my-2" aria-label="Default select">
+                                    <option selected>Numero di stelle</option>
+                                    <option value="1">1 stella</option>
+                                    <option value="2">2 stelle</option>
+                                    <option value="3">3 stelle</option>
+                                    <option value="4">4 stelle</option>
+                                    <option value="5">5 stelle</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="submit" id="inviaAlloggio" class="btn operazioni" value="AGGIUNGI">
+                        <button class="btn operazioni hidden" id="modificaAlloggio" onclick="editAlloggi()">MODIFICA</button>
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal per aggiungere nuovi utenti-->
+        <div class="modal fade" id="newUtenteModal" tabindex="-1" aria-labelledby="UtentiModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="UtentiModalLabel">NUOVO UTENTE</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <h6>Aggiungi i dati utente</h6>
+                    <form id="newUtente" name="newUtente" method="post">
+                        <input type="text" class="hidden" id="idUtente">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" name="email" id="floatingEmailNuovoUtente" placeholder="email@example.com">
+                            <label for="floatingEmailNuovoUtente">Indirizzo Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingNomeNuovoUtente" placeholder="name">
+                            <label for="floatingNomeNuovoUtente">Nome</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingCognomeNuovoUtente" placeholder="lastname">
+                            <label for="floatingCognomeNuovoUtente">Cognome</label>
+                        </div>
+                        <div class="form-floating mx-0 mb-2" style="display: flex; flex-direction: row;">
+                            <input type="password" class="form-control" name="password" id="floatingPasswordNuovoUtente" placeholder="Password" aria-describedby="basic-addon2">
+                            <label for="floatingPasswordNuovoUtente">Password</label>
+                            <span class="input-group-text pw-eye" id="basic-addon2" onclick="showHidePW('accesso')"><img src="./IMMAGINI PROGETTO/eye.png" class="opacity-50 accesso" height="45px"><img src="./IMMAGINI PROGETTO/hide.png" class="opacity-50 accesso hidden" height="45px"></span>
+                        </div>
+                        <div class="form-floating mx-0 mb-2" style="display: flex; flex-direction: row;">
+                            <input type="password" class="form-control" name="conferma" id="floatingPasswordConfNuovoUtente" placeholder="Password" aria-describedby="basic-addon2">
+                            <label for="floatingPasswordConfNuovoUtente">Conferma Password</label>
+                            <span class="input-group-text pw-eye" id="basic-addon2" onclick="showHidePW('conferma')"><img src="./IMMAGINI PROGETTO/eye.png" class="opacity-50 conferma" height="45px"><img src="./IMMAGINI PROGETTO/hide.png" class="opacity-50 conferma hidden" height="45px"></span>
+                        </div>
+                        <div class="row text-center px-4"> <!--RIGA DATA DI NASCITA-->
+                            <div class="col-12 ps-0 mt-1 mb-1">
+                                <p class="text-start mt-2 mb-1" style="color: grey; font-size: small;">Data di nascita:</p>
+                            </div>
+                            <div class="col-12 col-md-4 my-1 px-0 pe-md-1">
+                                <select class="form-select" id="giorno">
+                                    <option style="display: none;">GG</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-4 my-1 px-0 pe-md-1">
+                                <select class="form-select" id="mese">
+                                    <option style="display: none;">MM</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-4 my-1 px-0">
+                                <select class="form-select" id="anno">
+                                    <option style="display: none;">YYYY</option>
+                                    <option value="1950">1950</option>
+                                    <option value="1951">1951</option>
+                                    <option value="1952">1952</option>
+                                    <option value="1953">1953</option>
+                                    <option value="1954">1954</option>
+                                    <option value="1955">1955</option>
+                                    <option value="1956">1956</option>
+                                    <option value="1957">1957</option>
+                                    <option value="1958">1958</option>
+                                    <option value="1959">1959</option>
+                                    <option value="1960">1960</option>
+                                    <option value="1961">1961</option>
+                                    <option value="1962">1962</option>
+                                    <option value="1963">1963</option>
+                                    <option value="1964">1964</option>
+                                    <option value="1965">1965</option>
+                                    <option value="1966">1966</option>
+                                    <option value="1967">1967</option>
+                                    <option value="1968">1968</option>
+                                    <option value="1969">1969</option>
+                                    <option value="1970">1970</option>
+                                    <option value="1971">1971</option>
+                                    <option value="1972">1972</option>
+                                    <option value="1973">1973</option>
+                                    <option value="1974">1974</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row px-4"> <!--RIGA PRIVACY-->
+                            <div class="col-12 ps-0 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input border-dark" type="checkbox" value="" id="CheckPrivacyNuovoUtente" required>
+                                    <label class="form-check-label" for="CheckPrivacy">
+                                        <p style="color: black; display:inline-block;">L'utente ha letto e compreso la privacy policy?</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" id="inviaUtente" class="btn operazioni" value="AGGIUNGI">
+                        <button class="btn operazioni hidden" id="modificaUtente" onclick="editUtente()">MODIFICA</button>
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal per aggiungere nuova offerta-->
+        <div class="modal fade" id="newOffertaModal" tabindex="-1" aria-labelledby="OfferteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="DestinazioniModalLabel">NUOVA OFFERTA</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <h6>Aggiungi i dati della nuova offerta</h6>
+                    <form id="newOfferta" name="newOfferta" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingNomeNuovaOfferta" placeholder="name">
+                            <label for="floatingNomeNuovaOfferta">Nome della destinazione</label>
+                        </div>
+                        <select id="selectDestinazioniOff" class="form-select my-2" aria-label="Default select">
+                            <option selected>Scegli la destinazione</option>
+                            <!--parte dinamica-->
+                        </select>
+                        <div class="row ps-2 my-2">
+                            <div class="col-6 p-1 form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingPrezzoNuovaOfferta" placeholder="name">
+                                <label for="floatingPrezzoNuovaOfferta">Prezzo</label>
+                            </div>
+                            <div class="col-6 p-1 form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingScontoNuovaOfferta" placeholder="name">
+                                <label for="floatingScontoNuovaOfferta">Sconto</label>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn operazioni" value="AGGIUNGI">
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--FOOTER-->
         <footer class="footer w-100" style="font-family: Poppins, sans-serif;  ">
             <br>
@@ -786,7 +932,6 @@
         <script src="./JS/bootstrap.bundle.min.js"></script>
         <!--JS-->
         <script>
-
             //funzioni
             function schermata(contenitore, btn) {
                 //seleziono il contenitore da mostrare e quello da nascondere
@@ -815,8 +960,23 @@
                     btn.setAttribute('aria-current', 'page');
                 }
             }
-            function editDestinazione(id) {
-                
+            function showHidePW(tipo) {
+                //prendo le icone da cambiare
+                let icona = document.getElementsByClassName(tipo);
+                let password;
+                if (tipo == 'accesso') {
+                    password = document.getElementById('floatingPasswordNuovoUtente');
+                } else {
+                    password = document.getElementById('floatingPasswordConfNuovoUtente');
+                }
+                if (password.type=='password') {
+                    password.type='text';
+                } else {
+                    password.type='password';
+                }
+                for (let img of icona) {
+                    img.classList.toggle('hidden');
+                }
             }
 
             //modifica pagina
@@ -839,57 +999,390 @@
                         //prendo tutti il totale generato dai preventivi la cui data è compresa tra inizio anno e data attuale
                         let oggi = new Date();
                     })  DA FINIRE*/
-                //seleziono tutti gli elementi da modificare in DESTINAZIONI
-                const tabellaDestinazioni = document.getElementById('tbody-destinazioni');
-                //costruisco la tabella delle DESTINAZIONI
-                fetch('http://localhost:8080/destinazioni')
-                    .then(res => res.json())
-                    .then(data => {
-                        //considero ciascuna destinazione ricevuta dal DB
-                        data.forEach(destinazione => {
-                            //costruisco la riga dedicata alla singola destinazione
-                            const row = document.createElement('tr');
-                            //riempio la riga con la destinazione
-                            row.innerHTML = `
-                                <td>${destinazione.nome}</td>
-                            `;
-                            let nAlloggi;
-                            let nPrenotazioni;
-                            /*fetch('http://localhost:8080/alloggi/searchByDestinazione')
-                                .then(res => res.json())
-                                .then(data => nAlloggi=data.length)
-                            fetch('http://localhost:8080/preventivo/searchByDestinazione')
-                                .then(res => res.json())
-                                .then(data => nPrenotazioni = data.length)*/
-                            row.innerHTML+=`
-                                <td><b>WIP</b></td>
-                                <td><b>WIP</b></td>
-                                <td class="operazioni-de">
-                                    <button type="button" class="btn operazioni" onclick="editDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
-                                    <button type="button" class="btn operazioni" onclick="deleteDestinazione(${destinazione.id})"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
-                                </td>
-                            `;
-                            //inserisco la riga nel documento
-                            tabellaDestinazioni.appendChild(row);
+                
+                    //DESTINAZIONI
+                function fetchDestinazioni() {
+                    //seleziono tutti gli elementi da modificare in DESTINAZIONI
+                    const tabellaDestinazioni = document.getElementById('tbody-destinazioni');
+                    const selectDestinazioni = document.getElementById('selectDestinazioni');
+                    const selectDestinazioniOfferta = document.getElementById('selectDestinazioniOff')
+                    //cancello ciò che era scritto prima
+                    tabellaDestinazioni.innerHTML = '';
+                    selectDestinazioni.innerHTML = '<option selected>Scegli la destinazione</option>';
+                    selectDestinazioniOfferta.innerHTML = '<option selected>Scegli la destinazione</option>';
+                    //costruisco la tabella delle DESTINAZIONI
+                    fetch('http://localhost:8080/destinazioni')
+                        .then(res => res.json())
+                        .then(data => {
+                            //considero ciascuna destinazione ricevuta dal DB
+                            data.forEach(destinazione => {
+                                //costruisco la riga dedicata alla singola destinazione
+                                const row = document.createElement('tr');
+                                //riempio la riga con la destinazione
+                                row.innerHTML = `
+                                    <td>${destinazione.nome}</td>
+                                `;
+                                row.innerHTML+=`
+                                    <td><b>WIP</b></td>
+                                    <td><b>WIP</b></td>
+                                    <td>
+                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newDestinazioneModal" onclick="editModalDestinazione(${destinazione.id}, '${destinazione.nome}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${destinazione.id}, '${destinazione.nome}', 'destinazioni')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                    </td>
+                                `;
+                                //inserisco la riga nel documento
+                                tabellaDestinazioni.appendChild(row);
+                                //contaAlloggi(destinazione.nome, destinazione.id);
+                                //contaPrenotazioni(destinazione.nome, destinazione.id);
+                                //modifico i select per nuovi alloggi e offerte
+                                const opzione = document.createElement('option');
+                                const opzione2 = document.createElement('option');
+                                opzione.setAttribute('value', destinazione.id);
+                                opzione2.setAttribute('value', destinazione.id);
+                                opzione.innerHTML = `
+                                    ${destinazione.nome}
+                                `;
+                                opzione2.innerHTML = `
+                                    ${destinazione.nome}
+                                `;
+                                selectDestinazioni.appendChild(opzione);
+                                selectDestinazioniOfferta.appendChild(opzione2);
+                            })
                         })
-                    })
-                //seleziono gli elementi da modificare in ALLOGGI
-                const tabellaAlloggi = document.getElementById('tbody-alloggi');
-                //costruisco la tabella degli ALLOGGI
-                //fetch(...) => costruisco la riga => la riempio => inserisco la riga nella tabella => riga successiva...
-                //seleziono gli oggetti da modificare in UTENTI
-                const tabellaUtenti = document.getElementById('tbody-utenti');
-                //costruisco la tabella UTENTI
-                //fetch(...) => ...
+                }
+                
+                //ALLOGGI
+                function fetchAlloggi() {
+                    //seleziono gli elementi da modificare in ALLOGGI
+                    const tabellaAlloggi = document.getElementById('tbody-alloggi');
+                    tabellaAlloggi.innerHTML = '';
+                    //costruisco la tabella degli ALLOGGI
+                    fetch('http://localhost:8080/alloggi')
+                        .then(res => res.json())
+                        .then(data => {
+                            //considero ciascun alloggio ricevuto dal DB
+                            data.forEach(alloggio => {
+                                //costruisco la riga del singolo alloggio
+                                const row = document.createElement('tr');
+                                //riempio la riga con i dati dell'alloggio
+                                row.innerHTML = `
+                                    <td>${alloggio.descrizione}</td>
+                                    <td>${alloggio.destinazione.nome}</td>
+                                    <td>${alloggio.prezzo}€</td>
+                                    <td>${alloggio.stelle} stelle</td>
+                                    <td class="operazioni-de">
+                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newAlloggioModal" onclick="editModalAlloggi(${alloggio.id}, '${alloggio.descrizione}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${alloggio.id}, '${alloggio.descrizione}', 'alloggi')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                    </td>
+                                `;
+                                //inserisco la riga nella tabella
+                                tabellaAlloggi.appendChild(row);
+                            })
+                        })
+                }
+                
+                //UTENTI
+                function fetchUtenti() {
+                    //seleziono gli oggetti da modificare in UTENTI
+                    const tabellaUtenti = document.getElementById('tbody-utenti');
+                    tabellaUtenti.innerHTML = '';
+                    //costruisco la tabella UTENTI
+                    fetch('http://localhost:8080/utenti')
+                        .then(res => res.json())
+                        .then(data => {
+                            //considero il singolo utente
+                            data.forEach(utente => {
+                                //creo la riga del singolo utente
+                                const row = document.createElement('tr');
+                                //elaboro la data di nascita
+                                const date = new Date(utente.nascita);
+                                let nascitaUtente = date.toLocaleDateString();
+                                //riempio la riga con i dati dell'utente
+                                row.innerHTML = `
+                                    <td>${utente.nome}</td>
+                                    <td>${utente.cognome}</td>
+                                    <td>${utente.email}</td>
+                                    <td>${utente.password}</td>
+                                    <td>${nascitaUtente}</td>
+                                    <td class="operazioni-de">
+                                        <button type="button" class="btn operazioni" data-bs-toggle="modal" data-bs-target="#newUtenteModal" onclick="editModalUtenti(${utente.id}, '${utente.nome}')"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${utente.id}, '${utente.nome}', 'utenti')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                    </td>
+                                `;
+                                //inserisco la riga nella tabella
+                                tabellaUtenti.appendChild(row);
+                            })
+                        })
+                }
+                
+                //PRENOTAZIONI
+                function fetchPrenotazioni() {
+                    //seleziono gli oggetti da modificare in PRENOTAZIONI
+                    const tabellaPrenotazioni = document.getElementById('tbody-prenotazioni');
+                    tabellaPrenotazioni.innerHTML = '';
+                    //costruisco la tabella PRENOTAZIONI
+                    fetch('http://localhost:8080/preventivo')
+                        .then(res => res.json())
+                        .then(data => {
+                            //considero la singola prenotazione
+                            data.forEach(prenotazione => {
+                                //creo la riga per la singola prenotazione
+                                const row = document.createElement('tr');
+                                //riempio la riga con i dati della prenotazione
+                                row.innerHTML = `
+                                    <td>${prenotazione.nome} ${prenotazione.cognome}</td>
+                                    <td>${prenotazione.email}</td>
+                                    <td>${prenotazione.destinazione.nome}</td>
+                                    <td>${prenotazione.viaggiatori}</td>
+                                    <td>${prenotazione.giorni}</td>
+                                    <td>${prenotazione.prezzoElaborato}€</td>
+                                `;
+                                //calcolo se lo sconto è presente
+                                let sconto = 0;
+                                if (prenotazione.minoriPresenti==true) {
+                                    sconto=10;
+                                }
+                                row.innerHTML+=`
+                                    <td>${sconto}%</td>
+                                    <td class="operazioni-de">
+                                        <button type="button" class="btn operazioni" onclick="editPrenotazione(${prenotazione.id})"><img src="./IMMAGINI PROGETTO/modifica.png"></button>
+                                        <button type="button" class="btn operazioni" onclick="deleteElemento(${prenotazione.id}, '${prenotazione.email}', 'preventivo')"><img src="./IMMAGINI PROGETTO/rimuovi.png"></button>
+                                    </td>
+                                `;
+                                tabellaPrenotazioni.appendChild(row);
+                            })
+                        })
+                }
+                
+                //OFFERTE
                 //seleziono gli oggetti da modificare in OFFERTE
                 const tabellaOfferte = document.getElementById('tbody-offerte');
                 //costruisco la tabella OFFERTE
                 //fetch(...) => ...
+                
+                //MESSAGGI E RECENSIONI
                 //seleziono gli oggetti da modificare in MESSAGGI E RECENSIONI
                 const tabellaComunicazioni = document.getElementById('tbody-comunicazioni');
                 //costruisco la tabella MESSAGGI E RECENSIONI
                 //fetch(...) => ...
+
+                //OPERAZIONI CREATE
+
+                //DESTINAZIONI
+                const formNewDestinazione = document.getElementById('newDestinazione');
+                formNewDestinazione.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    const id = document.getElementById('idDestinazione').value;
+                    const url = id ? `http://localhost:8080/destinazioni/${id}` : 'http://localhost:8080/destinazioni';
+                    const method = id ? 'PUT' : 'POST';
+                    const nomeDestinazione = document.getElementById('floatingNomeNuovaDestinazione');
+                    const destinazione = {
+                        nome: nomeDestinazione.value
+                    }
+
+                    fetch(url, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(destinazione)
+                    }).then(() => {
+                        fetchDestinazioni();
+                        formNewDestinazione.reset();
+                    });
+                    //riporto il form nello stato iniziale
+                    //modifico il metodo del form
+                    document.getElementById('newDestinazione').setAttribute('method', 'post');
+                    //nascondo il pulsante INVIA
+                    document.getElementById('inviaDestinazione').classList.remove('hidden');
+                    //mostro il pulsante MODIFICA
+                    document.getElementById('modificaDestinazione').classList.add('hidden');
+                    //cambio il titolo del modal
+                    document.getElementById('DestinazioniModalLabel').innerText = 'NUOVA DESTINAZIONE';
+                });
+
+                //ALLOGGI
+                const formNewAlloggio = document.getElementById('newAlloggio');
+                formNewAlloggio.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const id = document.getElementById('idAlloggio').value;
+                    const url = id ? `http://localhost:8080/alloggi/${id}` : 'http://localhost:8080/alloggi';
+                    const method = id ? 'PUT' : 'POST';
+                    const nomeAlloggio = document.getElementById('floatingNomeNuovoAlloggio');
+                    const destinazioneAlloggio = document.getElementById('selectDestinazioni');
+                    const prezzoAlloggio = document.getElementById('floatingPrezzoNuovoAlloggio');
+                    const stelleAlloggio = document.getElementById('selectStelle');
+                    const alloggio = {
+                        descrizione: nomeAlloggio.value, //sostituire descrizione con nome
+                        prezzo: prezzoAlloggio.value,
+                        destinazione: {
+                            id: destinazioneAlloggio.value
+                        },
+                        stelle: stelleAlloggio.value
+                    }
+
+                    fetch(url, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(alloggio)
+                    }).then(() => {
+                        fetchAlloggi();
+                        formNewAlloggio.reset();
+                    });
+                });
+
+                //UTENTI
+                const formNewUtente = document.getElementById('newUtente');
+                formNewUtente.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const id = document.getElementById('idUtente').value;
+                    const url = id ? `http://localhost:8080/utenti/${id}` : 'http://localhost:8080/utenti';
+                    const method = id ? 'PUT' : 'POST';
+                    const nomeUtente = document.getElementById('floatingNomeNuovoUtente');
+                    const cognomeUtente = document.getElementById('floatingCognomeNuovoUtente');
+                    const emailUtente = document.getElementById('floatingEmailNuovoUtente');
+                    const giornoNascita = document.getElementById('giorno');
+                    const meseNascita = document.getElementById('mese');
+                    const annoNascita = document.getElementById('anno');
+                    const passwordUtente = document.getElementById('floatingPasswordNuovoUtente');
+                    const confermaUtente = document.getElementById('floatingPasswordConfNuovoUtente');
+                    const privacyUtente = document.getElementById('CheckPrivacyNuovoUtente');
+                    //manipolo la data di nascita
+                    let nascitaUtente = new Date();
+                    nascitaUtente.setDate(giornoNascita.value);
+                    nascitaUtente.setMonth((meseNascita.value-1));
+                    nascitaUtente.setFullYear(annoNascita.value);
+                    const utente = {
+                        nome: nomeUtente.value,
+                        cognome: cognomeUtente.value,
+                        email: emailUtente.value,
+                        password: passwordUtente.value,
+                        confermaPassword: confermaUtente.value,
+                        nascita: nascitaUtente,
+                        privacyLetta: privacyUtente.checked
+                    };
+
+                    fetch(url, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(utente)
+                    }).then(() => {
+                        fetchUtenti();
+                        formNewUtente.reset();
+                    })
+                })
+
+                //OFFERTE
+
+                //OPERAZIONI DELETE
+                window.deleteElemento = function (id, nome, tipo) {
+                    console.log('ok');
+                    const risposta = prompt("Sicuro di voler eliminare "+nome+"? Digita "+nome+" per confermare.");
+                    if (risposta==nome) {
+                        fetch(`http://localhost:8080/${tipo}/${id}`, {
+                            method: 'DELETE'
+                        }).then(() => {
+                            fetchDestinazioni();
+                            fetchAlloggi();
+                            fetchPrenotazioni();
+                            fetchUtenti();
+                        })
+                    } else {
+                        alert('Inserimento sbagliato, eliminazione annullata.')
+                    }
+                }
+
+                //MODIFICA MODALS
+                
+                //DESTINAZIONI
+                window.editModalDestinazione = function (id, nome) {
+                    if(id==0) {
+                        //faccio tornare il form allo stato originale
+                        //modifico il metodo del form
+                        document.getElementById('newDestinazione').setAttribute('method', 'post');
+                        //mostro il pulsante INVIA
+                        document.getElementById('inviaDestinazione').classList.remove('hidden');
+                        //nascondo il pulsante MODIFICA
+                        document.getElementById('modificaDestinazione').classList.add('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('DestinazioniModalLabel').innerText = 'NUOVA DESTINAZIONE';
+                    } else {
+                        //modifico il form
+                        //modifico il metodo del form
+                        document.getElementById('newDestinazione').setAttribute('method', 'put');
+                        //nascondo il pulsante INVIA
+                        document.getElementById('inviaDestinazione').classList.add('hidden');
+                        //mostro il pulsante MODIFICA
+                        document.getElementById('modificaDestinazione').classList.remove('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('DestinazioniModalLabel').innerText = 'Modifica '+nome;
+                        //inserisco l'id della destinazione
+                        document.getElementById('idDestinazione').value = id;
+                    }
+                }
+
+                //ALLOGGI
+                window.editModalAlloggi = function (id, nome) {
+                    if(id==0) {
+                        //faccio tornare il form allo stato originale
+                        document.getElementById('newAlloggio').setAttribute('method', 'post');
+                        //mostro il pulsante INVIA
+                        document.getElementById('inviaAlloggio').classList.remove('hidden');
+                        //nascondo il pulsante MODIFICA
+                        document.getElementById('modificaAlloggio').classList.add('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('AlloggiModalLabel').innerText = 'AGGIUNGI ALLOGGIO';
+                    } else {
+                        //modifico il form per l'operazione PUT
+                        //modifico il metodo del form
+                        document.getElementById('newAlloggio').setAttribute('method', 'put');
+                        //nascondo il pulsante INVIA
+                        document.getElementById('inviaAlloggio').classList.add('hidden');
+                        //mostro il pulsante MODIFICA
+                        document.getElementById('modificaAlloggio').classList.remove('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('AlloggiModalLabel').innerText = 'Modifica '+nome;
+                        //inserisco l'id della destinazione
+                        document.getElementById('idAlloggio').value = id;
+                    }
+                }
+
+                //UTENTI
+                window.editModalUtenti = function (id, nome) {
+                    if(id==0) {
+                        //modifico il metodo del form
+                        document.getElementById('newUtente').setAttribute('method', 'post');
+                        //mostro il pulsante INVIA
+                        document.getElementById('inviaUtente').classList.remove('hidden');
+                        //nascondo il pulsante MODIFICA
+                        document.getElementById('modificaUtente').classList.add('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('UtentiModalLabel').innerText = 'AGGIUNGI NUOVO UTENTE';
+                    } else {
+                        //modifico il metodo del form
+                        document.getElementById('newUtente').setAttribute('method', 'put');
+                        //nascondo il pulsante INVIA
+                        document.getElementById('inviaUtente').classList.add('hidden');
+                        //mostro il pulsante MODIFICA
+                        document.getElementById('modificaUtente').classList.remove('hidden');
+                        //cambio il titolo del modal
+                        document.getElementById('UtentiModalLabel').innerText = 'Modifica '+nome;
+                        //inserisco l'id della destinazione
+                        document.getElementById('idUtente').value = id;
+                    }
+                }
+
+                //richiamo le funzioni fetch per mostrare i dati preesistenti al caricamento della pagina
+                fetchDestinazioni();
+                fetchAlloggi();
+                fetchPrenotazioni();
+                fetchUtenti();
             })
+
         </script>
     </body>
 </html>
