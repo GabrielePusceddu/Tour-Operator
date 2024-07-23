@@ -97,3 +97,9 @@
     margin-bottom: 70px !important;
 }
 
+@media (max-width:700) {
+    .footer .col {
+       margin-top: 25px !important;
+    }
+    
+}
