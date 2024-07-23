@@ -28,3 +28,15 @@ if (exampleModal) {
     modalBodyInput.value = recipient
   })
 }
+
+
+function cerca() {
+  const ricerca = document.getElementById("searchbar");
+  //cerco tutti i prodotti
+  const url="http://localhost:8080/destinazioni"
+  fetch(url)
+      .then(res => res.json())
+      .then(json => console.log(json))
+      .catch();
+  
+}
