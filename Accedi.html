@@ -204,24 +204,6 @@
         <!--JS-->
         <script>
             const errore = document.getElementById('errore');
-            /*function validazione() {
-                const mAccesso = document.getElementById("email_utente");
-                const pAccesso = document.getElementById("pw_accesso");
-                let incompleto = false;
-                if (mAccesso.value=="") {
-                    mAccesso.classList.add("mancante");
-                    incompleto=true;
-                };
-                if (pAccesso.value=="") {
-                    pAccesso.classList.add("mancante");
-                    incompleto=true;
-                }
-                if (incompleto==true) {
-                    if(errore.classList.contains('hidden')) {
-                        errore.classList.remove('hidden');
-                    }
-                }
-            };*/
             function resetta() {
                 const mancanti = document.getElementsByClassName("mancante");
                 for (let dato of mancanti) {

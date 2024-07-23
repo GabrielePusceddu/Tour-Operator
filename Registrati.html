@@ -174,7 +174,7 @@
                 </div>
             </div> <!--FINE RIGA-->
             <div class="row text-center"> <!--FORM-->
-                <form id="registrati" name="form1" action=""> <!--FORM REGISTRAZIONE-->
+                <form id="registrati" name="form1" action="" onsubmit="signin(event)"> <!--FORM REGISTRAZIONE-->
                     <label class="hidden pb-1" id="errore"><ins>CAMPO MANCANTE!</ins></label>
                     <div class="form-floating mx-2 mb-2">
                         <input type="email" class="form-control" name="email" id="email_utente" onclick="resetta()" placeholder="email@example.com">
@@ -349,7 +349,7 @@
                         </div>
                     </div> <!--FINE RIGA PRIVACY-->
                     <div class="row px-4"> <!--PULSANTE INVIO-->
-                        <button type="button" class="btn invio" style="background-color: #EF7365; color:#F4F4F4" onclick="validazione()">REGISTRATI</button>
+                        <input type="submit" class="btn invio" style="background-color: #EF7365; color:#F4F4F4" value="REGISTRATI">
                     </div>
                 </form> <!--FINE FORM REGISTRAZIONE-->
             </div>
@@ -364,7 +364,7 @@
             const errore = document.getElementById('errore');
             const err_pw = document.getElementById('errore_pw');
             function validazione() {
-                const mAccesso = document.getElementById("email_utente");
+                /*const mAccesso = document.getElementById("email_utente");
                 const nUtente = document.getElementById("nome_utente");
                 const cogUtente = document.getElementById("cognome_utente");
                 const pAccesso = document.getElementById("pw_accesso");
@@ -436,7 +436,7 @@
                     if(errore.classList.contains('hidden')) {
                         errore.classList.remove('hidden');
                     }
-                }
+                }*/
             };
             function resetta() {
                 //tolgo il bordo rosso dei vari campi mancanti
@@ -476,6 +476,132 @@
                 }
             }
             
+            async function signin(event) {
+                event.preventDefault();
+                const mailAccesso = document.getElementById("email_utente");
+                const nUtente = document.getElementById("nome_utente");
+                const cogUtente = document.getElementById("cognome_utente");
+                const passwordAccesso = document.getElementById("pw_accesso");
+                const pConferma = document.getElementById("pw_conferma");
+                const confPrivacy = document.getElementById("CheckPrivacy");
+                const ggNascita = document.getElementById("giorno");
+                const mmNascita = document.getElementById("mese");
+                const yyNascita = document.getElementById("anno");
+                let incompleto = false;
+                //controllo che tutti i valori siano stati inseriti
+                if (mailAccesso.value=="") {
+                    mailAccesso.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (nUtente.value=="") {
+                    nUtente.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (cogUtente.value=="") {
+                    cogUtente.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (passwordAccesso.value=="") {
+                    passwordAccesso.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (pConferma.value=="") {
+                    pConferma.classList.add("mancante");
+                    incompleto=true;
+                }
+                //condizione per cui un valore manca
+                if (incompleto==true) {
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                }
+                //controllo che le due password inserite coincidano
+                let nonCoincidono=false;
+                if (passwordAccesso.value!=pConferma.value) {
+                    passwordAccesso.classList.add("mancante");
+                    pConferma.classList.add("mancante");
+                    nonCoincidono=true;
+                    if(err_pw.classList.contains('hidden')) {
+                        err_pw.classList.remove('hidden');
+                    }
+                }
+                //controllo che la data sia stata inserita correttamente
+                if (ggNascita.value=="GG") {
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                    ggNascita.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (mmNascita.value=="MM") {
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                    mmNascita.classList.add("mancante");
+                    incompleto=true;
+                }
+                if (yyNascita.value=="YYYY") {
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                    yyNascita.classList.add("mancante");
+                    incompleto=true;
+                }
+
+                //controllo che la privacy sia stata letta
+                if(confPrivacy.checked==false) {
+                    confPrivacy.classList.add("mancante");
+                    if(errore.classList.contains('hidden')) {
+                        errore.classList.remove('hidden');
+                    }
+                }
+                const formNewUtente = document.getElementById('registrati');
+                if ((letto)&&(!nonCoincidono)&&(!incompleto)) {
+                    const mail = mailAccesso.value;
+                    const password = passwordAccesso.value;
+                    const nome = nUtente.value;
+                    const cognome = cogUtente.value;
+                    const conferma = pConferma.value;
+                    const checkPrivacy = confPrivacy.checked;
+                    let nascitaUtente = new Date();
+                    nascitaUtente.setDate(ggNascita.value);
+                    nascitaUtente.setMonth((mmNascita.value-1));
+                    nascitaUtente.setFullYear(yyNascita.value);
+                    const ruolo="USER";
+                    
+                    const nuovoUtente = {
+                        nome: nome,
+                        cognome: cognome,
+                        ruolo: ruolo,
+                        email: mail,
+                        password: password,
+                        confermaPassword: conferma,
+                        nascita: nascitaUtente,
+                        privacyLetta: checkPrivacy
+                    }
+                    try {
+                        const response = await fetch('http://localhost:8080/auth/signin', {
+                            method: 'POST',
+                            headers: {
+                            'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(nuovoUtente)
+                        });
+                        
+                        if (response.status==200) {
+                            const data = await response.json();
+                            const token = data.token;
+                            localStorage.setItem('authToken', token);
+                            username = mail.value;
+                            window.location.href='./PaginaPersonale.html';
+                        }
+                    } catch (error) {
+                        console.error('errore durante la creazione nuovo utente');
+                    }
+                } else {
+                    console.error('campi mancanti');
+                }
+            }
         </script>
     </body>
     <br>
